@@ -1,3 +1,27 @@
-h1 {
-    color: red;
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.bg-primary-color {
+  background-color: #FFF;  
+}
+
+.bg-secondary-color {
+  background-color: #ece8ea;  
+}
+
+.bg-dark-color {
+ background-color: #050505;
+}
+
+.primary-color {
+    color: #050505;
+}
+
+.secondary-color {
+    color: #7a7a7a;
+}
+
+.logo{
+    max-width: 150px;
 }
