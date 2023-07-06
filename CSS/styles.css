@@ -62,7 +62,7 @@
 
 /* SLIDER */
 #slider {
-    margin-top: 14em;
+    margin-top: 12em;
     margin-bottom: 1em;
 }
 
@@ -147,6 +147,14 @@
     margin-bottom: 4em;
 }
 
+#featured-container a{
+    color: #000;
+}
+
+#featured-container a:hover{
+    color: #7a7a7a;
+}
+
 .title {
     font-size: 1.75em;
     margin-bottom: 0.4em;
@@ -207,7 +215,7 @@
     }
 }
 
-/* INFO */
+/* Sobre o sítio */
 #info-content {
     margin-bottom: 4em;
     padding: 4em 1em;
@@ -269,7 +277,7 @@
 /* FOOTER DETAILS */
 
 #footer-details {
-    margin-bottom: 3em;
+    margin-bottom: 0.5em;
 }
 
 #news-container,
@@ -326,14 +334,10 @@
     }
     #contact-container {
         padding: 0 2em;
-        border-left: 1px solid #7a7a7a;
-        border-right: 1px solid #7a7a7a;
     }
 
     #social-container {
         padding: 0 2em;
-        border-left: 1px solid #7a7a7a;
-        border-right: 1px solid #7a7a7a;
     }
 
     #social-container a {
@@ -344,3 +348,17 @@
         font-size: 25px;
     }
 }
+
+  #imageCarousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  #imageCarousel img {
+    width: 100%;
+    height: 300px; /* Ajuste a altura conforme necessário */
+    overflow: hidden;
+  }
+
