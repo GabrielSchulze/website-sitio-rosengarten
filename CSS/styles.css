@@ -2,16 +2,20 @@
     font-family: 'Lato', sans-serif;
 }
 
+:target {
+    scroll-margin-top: 150px;
+}
+
 .bg-primary-color {
-  background-color: #FFF;  
+    background-color: #FFF;
 }
 
 .bg-secondary-color {
-  background-color: #ece8ea;  
+    background-color: #ece8ea;
 }
 
 .bg-dark-color {
- background-color: #050505;
+    background-color: #050505;
 }
 
 .primary-color {
@@ -27,7 +31,7 @@
     border-bottom: 1px solid #7a7a7a;
 }
 
-#navbar a:hover{
+#navbar a:hover {
     color: #7a7a7a;
 }
 
@@ -57,16 +61,16 @@
 
 #navbar-items .nav-item {
     margin: 0 1em;
-    
+
 }
 
 /* SLIDER */
 #slider {
-    margin-top: 12em;
+    margin-top: 10em;
     margin-bottom: 1em;
 }
 
-#slider h4{
+#slider h4 {
     text-align: center;
 }
 
@@ -86,6 +90,10 @@
     font-size: 3em;
 }
 
+.carousel-control-prev {
+    color: #000;
+}
+
 .carousel-indicators [data-bs-target] {
     background-color: #222;
     opacity: 0.8;
@@ -95,19 +103,20 @@
     background-color: #000;
 }
 
-@media(min-width: 768px) {
-  #slider .carousel-caption {
-    bottom: 15em;
-  }
-  
-  #slider .btn {
-    padding: 0.6 1.6em;
-    font-size: 1.2em;
-  }
 
-  .carousel-indicators {
-    bottom: 7em;
-  }
+@media(min-width: 768px) {
+    #slider .carousel-caption {
+        bottom: 15em;
+    }
+
+    #slider .btn {
+        padding: 0.6 1.6em;
+        font-size: 1.2em;
+    }
+
+    .carousel-indicators {
+        bottom: 7em;
+    }
 
 
 }
@@ -132,26 +141,30 @@
 }
 
 #mini-banners .btn {
-    margin-top: 1.5em; 
-    padding: 0.6em 1.2em;   
+    margin-top: 1.5em;
+    padding: 0.6em 1.2em;
+}
+
+#mini-banners p {
+    color: #000;
 }
 
 @media(min-width: 768px) {
-  #mini-banners {
-    margin-top: -6em;
-    }  
-  }
+    #mini-banners {
+        margin-top: -6em;
+    }
+}
 
 /* DESTAQUES */
 #featured-container {
     margin-bottom: 4em;
 }
 
-#featured-container a{
+#featured-container a {
     color: #000;
 }
 
-#featured-container a:hover{
+#featured-container a:hover {
     color: #7a7a7a;
 }
 
@@ -162,15 +175,15 @@
 }
 
 .title:before {
- width: 75px;
- border-top: 4px solid #7a7a7a;
- content: "";
- position: absolute;
- bottom: 2em;    
+    width: 75px;
+    border-top: 4px solid #7a7a7a;
+    content: "";
+    position: absolute;
+    bottom: 2em;
 }
 
 #featured-images {
-    margin-top: 2em;        
+    margin-top: 2em;
 }
 
 #featured-images .col-md-4 {
@@ -178,7 +191,7 @@
     cursor: pointer;
 }
 
-#featured-images .col-md-4:hover > .banner-content{
+#featured-images .col-md-4:hover>.banner-content {
     opacity: 0.8;
 }
 
@@ -201,7 +214,7 @@
     .title {
         font-size: 2.4em;
     }
-    
+
     .title::before {
         bottom: 1.5em;
     }
@@ -228,7 +241,7 @@
 #info-banner {
     display: flex;
     align-items: center;
-    margin-bottom: 2.5em;    
+    margin-bottom: 2.5em;
 }
 
 #info-numbers h3 {
@@ -237,7 +250,7 @@
 
 @media(min-width: 768px) {
     #info-content {
-      padding: 3.5em;        
+        padding: 3.5em;
     }
 }
 
@@ -252,7 +265,8 @@
 }
 
 #footer-top,
-#footer-top i,a {
+#footer-top i,
+a {
     color: #fff;
 }
 
@@ -266,7 +280,7 @@
     cursor: pointer;
 }
 
-#social-icons i:hover {
+#social-container i:hover {
     color: #7a7a7a;
 }
 
@@ -280,12 +294,22 @@
     margin-bottom: 0.5em;
 }
 
+#localizacao-container i,
+p {
+    color: #FFF;
+    font-size: 15px;
+}
+
+#localizacao-container i:hover {
+    color: #7a7a7a;
+}
+
 #news-container,
 #contact-container,
 #links-container {
     padding: 0;
     border: 0;
-    margin-bottom: 2em;        
+    margin-bottom: 2em;
 }
 
 #footer-details h4 {
@@ -325,13 +349,15 @@
     text-align: center;
 }
 
-@media(min-width:768px){
+@media(min-width:768px) {
     #news-container {
         padding-right: 2em;
     }
+
     #links-container {
         padding-left: 2em;
     }
+
     #contact-container {
         padding: 0 2em;
     }
@@ -349,16 +375,40 @@
     }
 }
 
-  #imageCarousel img {
+#imageCarousel img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     cursor: pointer;
-  }
+}
 
-  #imageCarousel img {
+#imageCarousel img {
     width: 100%;
-    height: 300px; /* Ajuste a altura conforme necessário */
+    height: 300px;
     overflow: hidden;
-  }
+}
 
+#avaliacoesCarousel img {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+#fotosCarousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+#fotosCarousel img {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+#nota-geral {
+    width: 90% !important;
+    display: block;
+    margin: 0 auto;
+}
