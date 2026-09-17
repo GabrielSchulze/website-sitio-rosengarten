@@ -1,0 +1,14 @@
+{
+  "name": "website-sitio-rosengarten",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Site do Sítio Rosengarten — Aurora, Santa Catarina",
+  "scripts": {
+    "build:img": "node tools/build-images.mjs",
+    "dev": "node --run serve",
+    "serve": "node tools/serve.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

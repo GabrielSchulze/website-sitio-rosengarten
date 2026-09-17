@@ -1,902 +1,648 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sítio RosenGarten</title>
-  <link rel="shortcut icon" href="img/fav-icon.png" type="image/x-icon" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <!-- Dependências JS -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+  <title>Sítio Rosengarten — chalé para dois em Aurora, Santa Catarina</title>
+  <meta name="description" content="Chalé de madeira para duas pessoas no Sítio Rosengarten, em Aurora (SC): fogão a lenha, teto de vidro sobre a cama, varanda de frente para a lagoa e nota 5,0 em limpeza e check-in no Airbnb.">
+  <link rel="canonical" href="https://sitiorosengarten.com.br/">
+  <meta name="theme-color" content="#2c4630">
 
-  <!-- Google Fonts - Lato-->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-    rel="stylesheet" />
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Sítio Rosengarten">
+  <meta property="og:title" content="Sítio Rosengarten — chalé para dois em Aurora, SC">
+  <meta property="og:description" content="Cheirinho de mato, brisa fresca, simplicidade e aconchego. Um chalé de madeira entre a lagoa, o ribeirão e a mata.">
+  <meta property="og:url" content="https://sitiorosengarten.com.br/">
+  <meta property="og:image" content="https://sitiorosengarten.com.br/assets/img/casa_centenaria_jardim.jpg">
+  <meta property="og:image:alt" content="Roseiras floridas na frente da casa enxaimel do Sítio Rosengarten">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- CSS Bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <link rel="icon" href="assets/img/fav-icon-360.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="assets/img/fav-icon.png">
 
-  <!--Bootstrap Icons-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,400..500&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- FontAwesome Icons-->
-  <script src="https://kit.fontawesome.com/7cbb5624ab.js" crossorigin="anonymous"></script>
+  <!-- Marca que o JavaScript está ativo antes da primeira pintura, para que a
+       entrada suave das figuras não pisque. -->
+  <script>document.documentElement.classList.add('js');</script>
 
-  <!-- CSS do Projeto-->
-  <link rel="stylesheet" href="css/styles.css" />
-
-  <!-- JavaScript Bootstrap-->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
-    </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Sítio Rosengarten",
+      "description": "Chalé de madeira para duas pessoas no Sítio Rosengarten, em Aurora, Santa Catarina.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Aurora",
+        "addressRegion": "SC",
+        "postalCode": "89186-000",
+        "addressCountry": "BR"
+      },
+      "telephone": "+55-47-99886-6297",
+      "url": "https://sitiorosengarten.com.br/",
+      "image": "https://sitiorosengarten.com.br/assets/img/casa_centenaria_jardim.jpg",
+      "petsAllowed": false,
+      "sameAs": [
+        "https://www.instagram.com/sitiorosengarten/",
+        "https://www.facebook.com/people/S%C3%ADtio-Rosengarten/100063441835421/",
+        "https://www.airbnb.com.br/rooms/50617195"
+      ]
+    }
+  </script>
 </head>
 
 <body>
-  <!-- Menu do Site -->
-  <nav class="navbar navbar-expand-lg fixed-top bg-primary-color" id="navbar">
-    <div class="container py-3">
-      <a href="#" class="navbar-brand">
-        <img class="logo" src="img/rosengarten_logo.png" alt="SitioRosenGarten" />
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="header" data-header>
+    <div class="envelope header__barra">
+      <a class="marca" href="#" aria-label="Sítio Rosengarten — início">
+        <img src="assets/img/rosengarten_logo_bw-360.webp" width="720" height="508" alt="Sítio Rosengarten">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-items"
-        aria-controls="navbar-items" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="bi bi-list"></i>
+
+      <nav class="nav" id="menu" data-menu aria-label="Navegação principal">
+        <ul class="nav__lista">
+            <li><a class="nav__link" href="#sitio">O sítio</a></li>
+            <li><a class="nav__link" href="#historia">A casa</a></li>
+            <li><a class="nav__link" href="#chale">O chalé</a></li>
+            <li><a class="nav__link" href="#fotos">Fotos</a></li>
+            <li><a class="nav__link" href="#avaliacoes">Avaliações</a></li>
+            <li><a class="nav__link" href="#contato">Contato</a></li>
+        </ul>
+        <a class="botao botao--principal" href="https://www.airbnb.com.br/rooms/50617195" target="_blank" rel="noopener">Reservar no Airbnb</a>
+      </nav>
+
+      <div class="header__acao">
+        <a class="botao botao--principal" href="https://www.airbnb.com.br/rooms/50617195" target="_blank" rel="noopener">Reservar</a>
+      </div>
+
+      <button class="gatilho-menu" type="button" data-gatilho aria-expanded="false" aria-controls="menu">
+        <span class="visualmente-oculto">Abrir menu</span>
+        <svg class="icone-abrir" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <svg class="icone-fechar" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg>
       </button>
-      <div class="collapse navbar-collapse" id="navbar-items">
-        <ul class="navbar-nav me-auto nb-2 mb-lg-0">
-          <li class="nav-item">
-            <a href="#slider-container" class="nav-link primary-color" aria-current="page">Início</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- Hero ------------------------------------------------------------ -->
+    <section class="hero">
+      <div class="hero__foto">
+        <picture>
+        <source type="image/webp" srcset="assets/img/casa_centenaria_jardim-480.webp 480w, assets/img/casa_centenaria_jardim-960.webp 960w, assets/img/casa_centenaria_jardim-1600.webp 1600w" sizes="100vw">
+        <img src="assets/img/casa_centenaria_jardim.jpg" width="1200" height="820" alt="Roseiras floridas na frente da casa enxaimel do Sítio Rosengarten" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+      <div class="envelope hero__envelope">
+       <div class="hero__conteudo">
+        <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> Sítio Rosengarten · Aurora, SC</p>
+        <h1>Cheirinho de mato, brisa fresca, simplicidade e aconchego</h1>
+        <p class="hero__resumo">Um chalé de madeira para duas pessoas, no terreno de uma casa enxaimel de 1929 — entre a lagoa, o ribeirão e a mata.</p>
+        <div class="hero__acoes">
+          <a class="botao botao--principal" href="https://www.airbnb.com.br/rooms/50617195" target="_blank" rel="noopener">Reservar no Airbnb</a>
+          <a class="botao botao--contorno" href="https://wa.me/554799886297" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        </div>
+        <p class="hero__nota">
+          <span class="estrelas" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.6 2.9 5.9 6.5.9-4.7 4.6 1.1 6.4-5.8-3-5.8 3 1.1-6.4L2.6 9.4l6.5-.9Z"/></svg></span>
+          <span><strong>5,0</strong> em limpeza, comunicação, check-in e localização · 18 avaliações no Airbnb</span>
+        </p>
+       </div>
+      </div>
+    </section>
+
+    <!-- Pelo sítio ------------------------------------------------------ -->
+    <section class="secao" id="sitio">
+      <div class="envelope">
+        <div class="cabecalho-secao">
+          <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> Pelo sítio</p>
+          <h2>A lagoa, o ribeirão e o mato em volta</h2>
+          <p class="introducao">O chalé fica dentro de um sítio que continua sendo um sítio: ovelhas, patos, gansos, galinhas e coelhos circulando, e quase nenhum barulho que não seja pássaro.</p>
+        </div>
+        <div class="paisagens">
+          <article class="paisagem revelar">
+          <div class="paisagem__foto"><picture>
+            <source type="image/webp" srcset="assets/img/lagoa-480.webp 480w, assets/img/lagoa-960.webp 960w, assets/img/lagoa-1600.webp 1600w" sizes="(min-width: 64rem) 360px, (min-width: 40rem) 45vw, 92vw">
+            <img src="assets/img/lagoa.jpg" width="1200" height="849" alt="Marrecos nadando na lagoa do sítio, com um rancho de madeira na outra margem" loading="lazy" decoding="async">
+            </picture></div>
+          <h3>A lagoa</h3>
+          <p>Patos e marrecos passam o dia nela. Dá pra dar a volta a pé em alguns minutos — e o rancho de madeira na outra margem é o melhor lugar pra ficar parado olhando.</p>
+        </article>
+          <article class="paisagem revelar">
+          <div class="paisagem__foto"><picture>
+            <source type="image/webp" srcset="assets/img/ribeirao-480.webp 480w, assets/img/ribeirao-960.webp 960w, assets/img/ribeirao-1600.webp 1600w" sizes="(min-width: 64rem) 360px, (min-width: 40rem) 45vw, 92vw">
+            <img src="assets/img/ribeirao.jpg" width="1200" height="900" alt="Ribeirão correndo entre pedras grandes no fundo do terreno" loading="lazy" decoding="async">
+            </picture></div>
+          <h3>O ribeirão</h3>
+          <p>Água corrente entre pedras grandes, no fundo do terreno, escondida no meio do mato. É o barulho que sobra quando todo o resto fica em silêncio.</p>
+        </article>
+          <article class="paisagem revelar">
+          <div class="paisagem__foto"><picture>
+            <source type="image/webp" srcset="assets/img/aerea_7-480.webp 480w, assets/img/aerea_7-960.webp 960w, assets/img/aerea_7-1600.webp 1600w" sizes="(min-width: 64rem) 360px, (min-width: 40rem) 45vw, 92vw">
+            <img src="assets/img/aerea_7.jpg" width="1200" height="675" alt="Vista aérea do vale, com mata fechada de um lado e pasto do outro" loading="lazy" decoding="async">
+            </picture></div>
+          <h3>A mata</h3>
+          <p>Mata fechada de um lado, pasto e roça do outro. O sítio está encaixado num vale do Alto Vale do Itajaí, a poucos minutos do centro de Rio do Sul.</p>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- A casa de 1929 -------------------------------------------------- -->
+    <section class="secao secao--alt" id="historia">
+      <div class="envelope faixa">
+        <figure class="faixa__figura revelar">
+          <div class="faixa__foto"><picture>
+            <source type="image/webp" srcset="assets/img/casa_centenaria-480.webp 480w, assets/img/casa_centenaria-960.webp 960w, assets/img/casa_centenaria-1600.webp 1600w" sizes="(min-width: 56rem) 50vw, 92vw">
+            <img src="assets/img/casa_centenaria.jpg" width="1200" height="798" alt="Casa centenária enxaimel de 1929, com esquadrias verdes e hortênsias na frente" loading="lazy" decoding="async">
+            </picture></div>
+          <figcaption class="faixa__legenda">A casa centenária, em restauro pela família.</figcaption>
+        </figure>
+        <div class="faixa__texto">
+          <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> A casa de 1929</p>
+          <h2>Enxaimel, tijolo à vista e um jardim de rosas</h2>
+          <p><em>Rosengarten</em> quer dizer “jardim de rosas” em alemão — e o nome não é enfeite. As roseiras estão ali, na frente da casa centenária, junto com as hortênsias.</p>
+          <p>A casa é enxaimel, o sistema construtivo que os imigrantes alemães trouxeram para o Vale do Itajaí: uma estrutura de madeira aparente com os vãos preenchidos de tijolo. A trama de madeira, as esquadrias verdes e o telhado de telha de barro continuam à vista. A família restaura a casa aos poucos.</p>
+          <p>A data no brasão é 1929, e é dela que vem o resto da marca: a arcada de tijolo da fachada, a árvore do terreiro e as cores da bandeira que veio junto com a técnica de construir.</p>
+          <!-- TODO: substituir o texto acima pela história da família — quem construiu, quem morou, como o sítio chegou até aqui. -->
+          <p class="selo"><img src="assets/img/rosengarten_logo-360.webp" width="720" height="508" alt="Brasão do Sítio Rosengarten, com a data de 1929" loading="lazy" decoding="async"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O chalé --------------------------------------------------------- -->
+    <section class="secao" id="chale">
+      <div class="envelope faixa faixa--invertida">
+        <figure class="faixa__figura revelar">
+          <div class="faixa__foto"><picture>
+            <source type="image/webp" srcset="assets/img/chale/chale_lateral_2-480.webp 480w, assets/img/chale/chale_lateral_2-960.webp 960w, assets/img/chale/chale_lateral_2-1600.webp 1600w" sizes="(min-width: 56rem) 50vw, 92vw">
+            <img src="assets/img/chale/chale_lateral_2.jpg" width="1200" height="1074" alt="Varanda do chalé acesa ao entardecer, com cadeiras e floreira" loading="lazy" decoding="async">
+            </picture></div>
+          <figcaption class="faixa__legenda">A varanda no fim da tarde.</figcaption>
+        </figure>
+        <div class="faixa__texto">
+          <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> A hospedagem</p>
+          <h2>O chalé</h2>
+          <p>Chalé de madeira para duas pessoas, num canto reservado do sítio. Tem fogão a lenha na sala, um trecho de teto de vidro logo acima da cama — dá pra dormir olhando o céu — e uma varanda de frente para a lagoa e para o mato.</p>
+          <p>A cozinha é completa, a churrasqueira fica na própria varanda, e quem chega costuma encontrar pão fresco, doces caseiros e ovos da granja esperando na mesa.</p>
+          <p><a class="botao botao--principal" href="https://www.airbnb.com.br/rooms/50617195" target="_blank" rel="noopener">Ver datas e reservar</a></p>
+        </div>
+      </div>
+
+      <div class="envelope">
+        <h3 class="visualmente-oculto">O que tem no chalé</h3>
+        <ul class="comodidades" role="list">
+          <li class="comodidade">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c.6 3 2.2 4 3.6 5.6A6.8 6.8 0 0 1 17.5 13a5.5 5.5 0 0 1-11 0c0-1.6.6-2.7 1.4-3.6.3 1 .9 1.7 1.7 2 .1-2.9 1-5.6 2.4-8.4Z"/><path d="M12 21a2.6 2.6 0 0 1-2.6-2.6c0-1.6 1.6-2.4 2.6-4.4 1 2 2.6 2.8 2.6 4.4A2.6 2.6 0 0 1 12 21Z"/></svg>
+            <span><strong>Fogão a lenha</strong><span>Sala aquecida e cheiro de lenha</span></span>
           </li>
-          <li class="nav-item">
-            <a href="#info-container" class="nav-link primary-color" aria-current="page">História</a>
+          <li class="comodidade">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20 8 5h8l5 15"/><path d="M6.3 11h11.4"/><path d="M12 5v15"/><path d="m8.6 20 3.4-9 3.4 9"/></svg>
+            <span><strong>Teto de vidro</strong><span>Um trecho envidraçado logo acima da cama</span></span>
           </li>
-          <li class="nav-item">
-            <a href="#featured-container" class="nav-link primary-color" aria-current="page">Chalé</a>
+          <li class="comodidade">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7"/><path d="M5 11v9M19 11v9M3 20h18"/><path d="M9 20v-5h6v5"/></svg>
+            <span><strong>Varanda com vista</strong><span>De frente para a lagoa e para o mato</span></span>
           </li>
-          <li class="nav-item">
-            <a href="#fotos-container" class="nav-link primary-color" aria-current="page">Fotos</a>
+          <li class="comodidade">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v5a7 7 0 0 1-14 0Z"/><path d="m9 16-2 5M15 16l2 5"/><path d="M8 8h8"/></svg>
+            <span><strong>Churrasqueira</strong><span>Na própria varanda, pronta para usar</span></span>
           </li>
-          <li class="nav-item">
-            <a href="https://www.airbnb.com.br/rooms/50617195?source_impression_id=p3_1688524500_tRq9LwhYya3bqtbp"
-              target="_blank" class="nav-link primary-color" aria-current="page">Reservas</a>
+          <li class="comodidade">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h16v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5Z"/><path d="M4 11H2.5M20 11h1.5"/><path d="M9 6c0-1 1-1 1-2M14 6c0-1 1-1 1-2"/></svg>
+            <span><strong>Cozinha completa</strong><span>Utensílios para cozinhar de verdade</span></span>
           </li>
-          <li class="nav-item">
-            <a href="#contact-container" class="nav-link primary-color" aria-current="page">Contato</a>
+          <li class="comodidade">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="8" rx="2"/><path d="M7 8h10"/><path d="M7 16c0 2 2 2 2 4M12 16c0 2 2 2 2 4M17 16c0 2-2 2-2 4"/></svg>
+            <span><strong>Ar-condicionado</strong><span>Para os dias quentes de verão</span></span>
+          </li>
+          <li class="comodidade">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 18v-8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8"/><path d="M3 14h18M3 18h18"/><path d="M7 8V6h10v2"/></svg>
+            <span><strong>Roupa de cama e banho</strong><span>Trocadas, limpas e cheirosas</span></span>
+          </li>
+          <li class="comodidade">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10c0-2.2 1.8-4 4-4h8c2.2 0 4 1.8 4 4v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M9 6.5 8 18M15 6.5 16 18"/></svg>
+            <span><strong>Produtos coloniais</strong><span>Pão fresco, doces caseiros e ovos da granja</span></span>
           </li>
         </ul>
       </div>
-    </div>
-  </nav>
-  <!-- SLIDER -->
-  <div class="container" id="slider-container">
-    <div id="slider" class="carousel slide" data-bs-ride="carousel">
-      <!--<h4>Cheirinho de mato, brisa fresca, simplicidade e aconchego!</h4>-->
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#slider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+
+      <div class="envelope">
+        <h3 class="visualmente-oculto">Fotos do chalé</h3>
+        <div class="tira">
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/chale_frente-1600.webp" data-legenda="Fachada do chalé de madeira com escada de pedra e varanda">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/chale_frente-480.webp 480w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/chale_frente.jpg" width="958" height="1280" alt="Fachada do chalé de madeira com escada de pedra e varanda" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Fachada do chalé de madeira com escada de pedra e varanda</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/chale_lateral_2-1600.webp" data-legenda="Varanda do chalé iluminada por lâmpadas ao entardecer">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/chale_lateral_2-480.webp 480w, assets/img/chale/chale_lateral_2-960.webp 960w, assets/img/chale/chale_lateral_2-1600.webp 1600w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/chale_lateral_2.jpg" width="1200" height="1074" alt="Varanda do chalé iluminada por lâmpadas ao entardecer" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Varanda do chalé iluminada por lâmpadas ao entardecer</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/chale_vidro-1600.webp" data-legenda="Esquadrias de madeira e vidro do chalé vistas por dentro">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/chale_vidro-480.webp 480w, assets/img/chale/chale_vidro-960.webp 960w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/chale_vidro.jpg" width="1200" height="900" alt="Esquadrias de madeira e vidro do chalé vistas por dentro" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Esquadrias de madeira e vidro do chalé vistas por dentro</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/quarto-1-1600.webp" data-legenda="Cama de casal sob o trecho de teto de vidro do chalé">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/quarto-1-480.webp 480w, assets/img/chale/quarto-1-960.webp 960w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/quarto-1.jpg" width="1200" height="1603" alt="Cama de casal sob o trecho de teto de vidro do chalé" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Cama de casal sob o trecho de teto de vidro do chalé</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/quarto-2-1600.webp" data-legenda="Quarto do chalé com janela de madeira e mesa de cabeceira">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/quarto-2-480.webp 480w, assets/img/chale/quarto-2-960.webp 960w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/quarto-2.jpg" width="1200" height="1603" alt="Quarto do chalé com janela de madeira e mesa de cabeceira" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Quarto do chalé com janela de madeira e mesa de cabeceira</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/sala-1-1600.webp" data-legenda="Sala e cozinha do chalé com mezanino e escada de madeira">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/sala-1-480.webp 480w, assets/img/chale/sala-1-960.webp 960w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/sala-1.jpg" width="1200" height="1603" alt="Sala e cozinha do chalé com mezanino e escada de madeira" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Sala e cozinha do chalé com mezanino e escada de madeira</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/sala-2-1600.webp" data-legenda="Sala do chalé com sofá azul e porta para a varanda">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/sala-2-480.webp 480w, assets/img/chale/sala-2-960.webp 960w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/sala-2.jpg" width="1200" height="1603" alt="Sala do chalé com sofá azul e porta para a varanda" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Sala do chalé com sofá azul e porta para a varanda</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/cozinha-1600.webp" data-legenda="Cozinha do chalé com bancada, parede de tijolo e mesa">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/cozinha-480.webp 480w, assets/img/chale/cozinha-960.webp 960w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/cozinha.jpg" width="1200" height="1603" alt="Cozinha do chalé com bancada, parede de tijolo e mesa" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Cozinha do chalé com bancada, parede de tijolo e mesa</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/banheiro-1600.webp" data-legenda="Banheiro do chalé com box de vidro e bancada de madeira">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/banheiro-480.webp 480w, assets/img/chale/banheiro-960.webp 960w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/banheiro.jpg" width="1200" height="1603" alt="Banheiro do chalé com box de vidro e bancada de madeira" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Banheiro do chalé com box de vidro e bancada de madeira</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/churrasqueira-1600.webp" data-legenda="Churrasqueira de alvenaria na varanda do chalé">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/churrasqueira-480.webp 480w, assets/img/chale/churrasqueira-960.webp 960w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/churrasqueira.jpg" width="1200" height="1603" alt="Churrasqueira de alvenaria na varanda do chalé" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Churrasqueira de alvenaria na varanda do chalé</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/chale_aereo_frente-1600.webp" data-legenda="Vista aérea do chalé com o telhado verde entre as árvores">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/chale_aereo_frente-480.webp 480w, assets/img/chale/chale_aereo_frente-960.webp 960w, assets/img/chale/chale_aereo_frente-1600.webp 1600w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/chale_aereo_frente.jpg" width="1200" height="675" alt="Vista aérea do chalé com o telhado verde entre as árvores" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista aérea do chalé com o telhado verde entre as árvores</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/chale_tras-1600.webp" data-legenda="Chalé visto por trás, cercado de mata">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/chale_tras-480.webp 480w, assets/img/chale/chale_tras-960.webp 960w, assets/img/chale/chale_tras-1600.webp 1600w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/chale_tras.jpg" width="1200" height="675" alt="Chalé visto por trás, cercado de mata" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Chalé visto por trás, cercado de mata</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/exterior-lateral-chale-1600.webp" data-legenda="Lateral do chalé com o telhado verde contra o céu azul">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/exterior-lateral-chale-480.webp 480w, assets/img/chale/exterior-lateral-chale-960.webp 960w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/exterior-lateral-chale.jpg" width="1200" height="1603" alt="Lateral do chalé com o telhado verde contra o céu azul" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Lateral do chalé com o telhado verde contra o céu azul</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/vista_chale-1600.webp" data-legenda="Vista da lagoa e do pasto a partir do chalé">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/vista_chale-480.webp 480w, assets/img/chale/vista_chale-960.webp 960w, assets/img/chale/vista_chale-1600.webp 1600w" sizes="(min-width: 40rem) 22rem, 70vw">
+              <img src="assets/img/chale/vista_chale.jpg" width="1200" height="675" alt="Vista da lagoa e do pasto a partir do chalé" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista da lagoa e do pasto a partir do chalé</span>
+          </button>
+        </div>
       </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/casa_centenaria_aerea.jpg" class="d-block w-100" alt="Casa 1" />
+    </section>
 
+    <!-- Fotos ----------------------------------------------------------- -->
+    <section class="secao secao--alt" id="fotos">
+      <div class="envelope">
+        <div class="cabecalho-secao">
+          <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> Fotos</p>
+          <h2>O sítio de cima e de perto</h2>
+          <p class="introducao">Clique em qualquer foto para ampliar. Use as setas do teclado para navegar.</p>
         </div>
-        <div class="carousel-item">
-          <img src="img/aerea_7.jpg" class="d-block w-100" alt="Casa 2" />
-
-        </div>
-        <div class="carousel-item">
-          <img src="img/lagoa_rancho_patos.jpg" class="d-block w-100" alt="Casa 3" />
-
+        <div class="grade-fotos">
+          <button type="button" class="foto" data-lightbox data-full="assets/img/casa_centenaria-1600.webp" data-legenda="Casa centenária enxaimel com esquadrias verdes e hortênsias floridas">
+            <picture>
+              <source type="image/webp" srcset="assets/img/casa_centenaria-480.webp 480w, assets/img/casa_centenaria-960.webp 960w, assets/img/casa_centenaria-1600.webp 1600w" sizes="(min-width: 46rem) 50vw, 92vw">
+              <img src="assets/img/casa_centenaria.jpg" width="1200" height="798" alt="Casa centenária enxaimel com esquadrias verdes e hortênsias floridas" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Casa centenária enxaimel com esquadrias verdes e hortênsias floridas</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/aerea_6-1600.webp" data-legenda="Vista aérea da casa enxaimel mostrando a trama de madeira do telhado">
+            <picture>
+              <source type="image/webp" srcset="assets/img/aerea_6-480.webp 480w, assets/img/aerea_6-960.webp 960w, assets/img/aerea_6-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/aerea_6.jpg" width="1200" height="675" alt="Vista aérea da casa enxaimel mostrando a trama de madeira do telhado" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista aérea da casa enxaimel mostrando a trama de madeira do telhado</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/casa_centenaria_jardim-1600.webp" data-legenda="Roseiras cor-de-rosa na frente da casa centenária">
+            <picture>
+              <source type="image/webp" srcset="assets/img/casa_centenaria_jardim-480.webp 480w, assets/img/casa_centenaria_jardim-960.webp 960w, assets/img/casa_centenaria_jardim-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/casa_centenaria_jardim.jpg" width="1200" height="820" alt="Roseiras cor-de-rosa na frente da casa centenária" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Roseiras cor-de-rosa na frente da casa centenária</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/casa_centenaria_frente-1600.webp" data-legenda="Frente da casa centenária vista do gramado">
+            <picture>
+              <source type="image/webp" srcset="assets/img/casa_centenaria_frente-480.webp 480w, assets/img/casa_centenaria_frente-960.webp 960w, assets/img/casa_centenaria_frente-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/casa_centenaria_frente.jpg" width="1200" height="675" alt="Frente da casa centenária vista do gramado" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Frente da casa centenária vista do gramado</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/casa_centenaria_lateral-1600.webp" data-legenda="Lateral da casa centenária com o jardim ao redor">
+            <picture>
+              <source type="image/webp" srcset="assets/img/casa_centenaria_lateral-480.webp 480w, assets/img/casa_centenaria_lateral-960.webp 960w, assets/img/casa_centenaria_lateral-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/casa_centenaria_lateral.jpg" width="1200" height="675" alt="Lateral da casa centenária com o jardim ao redor" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Lateral da casa centenária com o jardim ao redor</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/lagoa_rancho_patos-1600.webp" data-legenda="Rancho de madeira na beira da lagoa, com morros ao fundo">
+            <picture>
+              <source type="image/webp" srcset="assets/img/lagoa_rancho_patos-480.webp 480w, assets/img/lagoa_rancho_patos-960.webp 960w, assets/img/lagoa_rancho_patos-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/lagoa_rancho_patos.jpg" width="1200" height="675" alt="Rancho de madeira na beira da lagoa, com morros ao fundo" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Rancho de madeira na beira da lagoa, com morros ao fundo</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/aerea_1-1600.webp" data-legenda="Vista aérea do sítio entre a mata e a plantação">
+            <picture>
+              <source type="image/webp" srcset="assets/img/aerea_1-480.webp 480w, assets/img/aerea_1-960.webp 960w, assets/img/aerea_1-1600.webp 1600w" sizes="(min-width: 46rem) 50vw, 92vw">
+              <img src="assets/img/aerea_1.jpg" width="1200" height="675" alt="Vista aérea do sítio entre a mata e a plantação" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista aérea do sítio entre a mata e a plantação</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/aerea_3-1600.webp" data-legenda="Vista aérea do vale coberto de mata">
+            <picture>
+              <source type="image/webp" srcset="assets/img/aerea_3-480.webp 480w, assets/img/aerea_3-960.webp 960w, assets/img/aerea_3-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/aerea_3.jpg" width="1200" height="675" alt="Vista aérea do vale coberto de mata" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista aérea do vale coberto de mata</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/aerea_4-1600.webp" data-legenda="Vista aérea do rancho, da estrada e da lagoa">
+            <picture>
+              <source type="image/webp" srcset="assets/img/aerea_4-480.webp 480w, assets/img/aerea_4-960.webp 960w, assets/img/aerea_4-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/aerea_4.jpg" width="1200" height="675" alt="Vista aérea do rancho, da estrada e da lagoa" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista aérea do rancho, da estrada e da lagoa</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/aerea_5-1600.webp" data-legenda="Vista aérea das construções do sítio no meio do verde">
+            <picture>
+              <source type="image/webp" srcset="assets/img/aerea_5-480.webp 480w, assets/img/aerea_5-960.webp 960w, assets/img/aerea_5-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/aerea_5.jpg" width="1200" height="675" alt="Vista aérea das construções do sítio no meio do verde" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista aérea das construções do sítio no meio do verde</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/aerea_8-1600.webp" data-legenda="Vista aérea da casa centenária e da estrada de acesso">
+            <picture>
+              <source type="image/webp" srcset="assets/img/aerea_8-480.webp 480w, assets/img/aerea_8-960.webp 960w, assets/img/aerea_8-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/aerea_8.jpg" width="1200" height="675" alt="Vista aérea da casa centenária e da estrada de acesso" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista aérea da casa centenária e da estrada de acesso</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/aerea_9-1600.webp" data-legenda="Vista aérea do sítio com a lagoa e os telhados entre as árvores">
+            <picture>
+              <source type="image/webp" srcset="assets/img/aerea_9-480.webp 480w, assets/img/aerea_9-960.webp 960w, assets/img/aerea_9-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/aerea_9.jpg" width="1200" height="675" alt="Vista aérea do sítio com a lagoa e os telhados entre as árvores" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista aérea do sítio com a lagoa e os telhados entre as árvores</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/casa_centenaria_aerea-1600.webp" data-legenda="Casa centenária vista de cima, cercada de gramado">
+            <picture>
+              <source type="image/webp" srcset="assets/img/casa_centenaria_aerea-480.webp 480w, assets/img/casa_centenaria_aerea-960.webp 960w, assets/img/casa_centenaria_aerea-1600.webp 1600w" sizes="(min-width: 46rem) 50vw, 92vw">
+              <img src="assets/img/casa_centenaria_aerea.jpg" width="1200" height="675" alt="Casa centenária vista de cima, cercada de gramado" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Casa centenária vista de cima, cercada de gramado</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/casa_centenaria_lateral_2-1600.webp" data-legenda="Casa centenária vista da lateral, com o muro de pedra">
+            <picture>
+              <source type="image/webp" srcset="assets/img/casa_centenaria_lateral_2-480.webp 480w, assets/img/casa_centenaria_lateral_2-960.webp 960w, assets/img/casa_centenaria_lateral_2-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/casa_centenaria_lateral_2.jpg" width="1200" height="675" alt="Casa centenária vista da lateral, com o muro de pedra" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Casa centenária vista da lateral, com o muro de pedra</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/vista-lagoa.jpg" data-legenda="Reflexo das árvores na lagoa no fim da tarde">
+            <picture>
+              <source type="image/webp" srcset="assets/img/chale/vista-lagoa-480.webp 480w, assets/img/chale/vista-lagoa-960.webp 960w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/chale/vista-lagoa.jpg" width="1200" height="1603" alt="Reflexo das árvores na lagoa no fim da tarde" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Reflexo das árvores na lagoa no fim da tarde</span>
+          </button>
+          <button type="button" class="foto" data-lightbox data-full="assets/img/aerea_2-1600.webp" data-legenda="Vista aérea do sítio com a mata fechada em volta">
+            <picture>
+              <source type="image/webp" srcset="assets/img/aerea_2-480.webp 480w, assets/img/aerea_2-960.webp 960w, assets/img/aerea_2-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/aerea_2.jpg" width="1200" height="675" alt="Vista aérea do sítio com a mata fechada em volta" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista aérea do sítio com a mata fechada em volta</span>
+          </button>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
-        <i class="bi bi-chevron-compact-left"></i>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
-        <i class="bi bi-chevron-compact-right"></i>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
+    </section>
 
-    <!-- MINI BANNERS-->
-    <div class="col-12 col-md-10 offset-md-1" id="mini-banners">
-      <div class="row">
-        <div class="col-12 col-md-4">
-          <div class="card text-center">
-            <i class="fa-solid fa-tree primary-color"></i>
-            <div class="card-body">
-              <h5 class="card-title primary-color">Natureza</h5>
-              <p class="card-text secundary-color">Árvores, ar puro, ribeirão, sombra, água fresca.</p>
-
-            </div>
+    <!-- Avaliações ------------------------------------------------------ -->
+    <section class="secao" id="avaliacoes">
+      <div class="envelope">
+        <div class="avaliacoes__topo">
+          <div class="cabecalho-secao" style="margin-block-end: 0">
+            <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> Avaliações</p>
+            <h2>O que os hóspedes escreveram</h2>
+            <p class="introducao">Avaliações publicadas no Airbnb por quem se hospedou no chalé, entre 2021 e 2023.</p>
           </div>
+          <dl class="notas">
+            <div class="nota"><dt>Limpeza</dt><dd>5,0</dd></div>
+          <div class="nota"><dt>Comunicação</dt><dd>5,0</dd></div>
+          <div class="nota"><dt>Check-in</dt><dd>5,0</dd></div>
+          <div class="nota"><dt>Exatidão do anúncio</dt><dd>5,0</dd></div>
+          <div class="nota"><dt>Localização</dt><dd>5,0</dd></div>
+          <div class="nota"><dt>Custo-benefício</dt><dd>4,8</dd></div>
+          </dl>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="card text-center">
 
-            <i class="fa-solid fa-cow primary-color"></i>
-            <div class="card-body">
-              <h5 class="card-title primary-color">Animais</h5>
-              <p class="card-text secundary-color">Ovelhas, patos, galinhas, coelhos, gansos, bois,
-                angolistas, e muito mais.</p>
-
-            </div>
-          </div>
+        <div class="depoimentos" data-carrossel tabindex="0" role="region" aria-label="Depoimentos de hóspedes">
+          <figure class="depoimento">
+            <blockquote>“Definitivamente, uma das minhas melhores experiências no Airbnb. O chalé é super bem distribuído, tudo super confortável e a vizinhança é perfeita pra quem curte natureza, silêncio e calmaria.”</blockquote>
+            <figcaption><strong>Janaina</strong>março de 2022 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“No terreno do chalé tem uma casinha histórica de 1929 que eles estão restaurando, é um trabalho muito lindo e encantador.”</blockquote>
+            <figcaption><strong>Pat</strong>agosto de 2021 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“Lugar lindo pra quem busca paz e tranquilidade. Foi o melhor réveillon que passamos. A cabana é linda como nas fotos, muito bem equipada e caprichosa.”</blockquote>
+            <figcaption><strong>Sherelee</strong>janeiro de 2022 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“Lugar maravilhoso, muita paz e tranquilidade. O lugar é bem silencioso e tem todos os utensílios domésticos que você precisa de maneira funcional, amamos o lugar.”</blockquote>
+            <figcaption><strong>Ádria</strong>maio de 2022 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“O local é muito bonito, ótimo para descansar e renovar energias. Nosso almoço ainda foi garantido pelos ovos das galinhas que ganhamos do dono do chalé, estava muito gostoso!”</blockquote>
+            <figcaption><strong>Alexandre</strong>agosto de 2022 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“Reinwald é uma pessoa muito atenciosa e nos apresentou o lugar muito detalhadamente. O lugar é muito tranquilo, privativo, tudo estava muito limpo quando chegamos.”</blockquote>
+            <figcaption><strong>Luis Ricardo</strong>janeiro de 2023 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“Passei o final de semana com a minha filha, adoramos o lugar, muito tranquilo. A cama super confortável, roupas limpas e cheirosas.”</blockquote>
+            <figcaption><strong>Daniela</strong>janeiro de 2023 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“Nos surpreendeu com pão fresquinho e outros produtos coloniais. O local é privado, aconchegante e bem silencioso. Perfeito para um fim de semana em casal!”</blockquote>
+            <figcaption><strong>Gabriele</strong>junho de 2022 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“Chalé confortável, ótimo para um casal. Local silencioso, excelente para descansar. Próximo do centro de Rio do Sul, com fácil acesso.”</blockquote>
+            <figcaption><strong>Maito Rodrigo</strong>setembro de 2021 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“Excelente lugar! Ótimo pra quem procura tranquilidade e silêncio. O seu Reinwald e a sua esposa são super queridos e receptivos.”</blockquote>
+            <figcaption><strong>Thamara</strong>março de 2022 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“Excelente experiência, padrão 5 estrelas realmente. Voltaremos numa próxima oportunidade.”</blockquote>
+            <figcaption><strong>Rogério</strong>setembro de 2022 · Airbnb</figcaption>
+          </figure>
+          <figure class="depoimento">
+            <blockquote>“A casa é linda. Os anfitriões são incrivelmente gentis, e quando cheguei deixaram vários mimos.”</blockquote>
+            <figcaption><strong>Eva</strong>outubro de 2022 · Airbnb</figcaption>
+          </figure>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="card text-center">
-            <i class="fa-solid fa-mug-hot primary-color"></i>
-            <div class="card-body">
-              <h5 class="card-title primary-color">Descanso</h5>
-              <p class="card-text secundary-color">Cheirinho de mato, brisa fresca, simplicidade e
-                aconchego!</p>
 
-            </div>
-          </div>
+        <div class="controles">
+          <button class="controle" type="button" data-carrossel-anterior>
+            <span class="visualmente-oculto">Depoimentos anteriores</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg>
+          </button>
+          <button class="controle" type="button" data-carrossel-proximo>
+            <span class="visualmente-oculto">Próximos depoimentos</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5 7 7-7 7"/></svg>
+          </button>
+          <a class="botao botao--contorno" href="https://www.airbnb.com.br/rooms/50617195" target="_blank" rel="noopener">Ler todas no Airbnb</a>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <!-- SOBRE O SÍTIO -->
-  <div class="container" id="info-container">
-    <div class="col-12">
-      <h2 class="title primary-color">Sítio Rosengarten</h2>
-      <p class="subtitle secondary-color">Cheirinho de mato, brisa fresca, simplicidade e aconchego!</p>
-    </div>
-    <div class="col-12">
-      <div class="row">
-        <div class="col-12 col-md-5">
-          <img src="img/casa_centenaria_jardim.jpg" alt="Informações do Sítio" class="img-fluid" />
-        </div>
-        <div class="col-12 col-md-7 bg-secondary-color" id="info-content">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="title primary-color">História</h2>
-              <p class="subtitle secondary-color">Aqui será contada a história do Sítio RosenGarten. Aqui
-                será contada a história do Sítio RosenGarten. Aqui será contada a história do Sítio
-                RosenGarten. Aqui será contada a história do Sítio RosenGarten. Aqui será contada a
-                história do Sítio RosenGarten. Aqui será contada a história do Sítio RosenGarten. Aqui
-                será contada a história do Sítio RosenGarten. Aqui será contada a história do Sítio
-                RosenGarten. Aqui será contada a história do Sítio RosenGarten. Aqui será contada a
-                história do Sítio RosenGarten. Aqui será contada a história do Sítio RosenGarten. Aqui
-                será contada a história do Sítio RosenGarten. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- Contato --------------------------------------------------------- -->
+    <section class="secao secao--alt" id="contato">
+      <div class="envelope contato">
+        <div class="faixa__texto">
+          <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> Contato</p>
+          <h2>Como chegar e falar com a gente</h2>
+          <p class="introducao">O sítio fica em Aurora, no Alto Vale do Itajaí, perto do centro de Rio do Sul e com acesso fácil pela rodovia.</p>
 
-  <!-- Chalé -->
-  <br>
-  <div class="container" id="featured-container">
-    <div class="col-12">
-      <h2 class="title primary-color">Chalé Sítio Rosengarten</h2>
-      <p class="subtitle secondary-color">Descubra o refúgio perfeito: nosso chalé encantador, disponível para
-        aluguel. Com um aconchego singular, nosso espaço oferece uma experiência única em meio à natureza.
-
-        Completamente equipado e cuidadosamente preparado, nosso chalé possui um fogão a lenha, proporcionando o
-        calor acolhedor e o aroma reconfortante da madeira queimando. Além disso, o quarto apresenta um teto de
-        vidro, permitindo que você admire a majestade do céu estrelado enquanto se aconchega em sua cama.
-
-        Aproveite momentos de contemplação na varanda, com uma vista incrível para a lagoa e o exuberante mato
-        ao redor. Deixe-se envolver pela serenidade desse ambiente pitoresco, onde cada amanhecer e pôr do sol
-        se tornam experiências inesquecíveis.
-
-        No Sítio Rosengarten você poderá desfrutar da sensação de paz em meio à natureza, interagindo com os
-        animais e aproveitando o calor do fogão a lenha. É um convite para se desconectar do mundo agitado e se
-        reconectar consigo mesmo, em harmonia com a natureza.
-
-        Descubra o refúgio perfeito. Reserve agora e desfrute de uma estadia encantadora no nosso chalé, onde o
-        conforto, a beleza natural e as experiências únicas se encontram. <a
-          href="https://www.airbnb.com.br/rooms/50617195?source_impression_id=p3_1688524500_tRq9LwhYya3bqtbp">Clique
-          e Reserve Agora</a></p>
-
-      <div class="container">
-        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-md-3">
-                  <img src="img/chale/chale_aereo_frente.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal1">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/chale/chale_lateral_1.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal2">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/chale/chale_tras.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal3">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/chale/vista_chale.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal4">
-                </div>
+          <dl class="dados">
+            <div class="dado">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+              <div><dt>Onde fica</dt>
+                <dd><a href="https://www.google.com/maps/place/Aurora,+SC,+89186-000" target="_blank" rel="noopener">Aurora — Santa Catarina, 89186-000</a></dd>
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-3">
-                  <img src="img/chale/churrasqueira.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal5">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/chale/cozinha.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal6">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/chale/banheiro.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal7">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/chale/quarto-1.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal8">
-                </div>
+            <div class="dado">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3h3l1.5 4.5-2 1.4a12 12 0 0 0 6.1 6.1l1.4-2L21 14.5v3a2.5 2.5 0 0 1-2.7 2.5A16.5 16.5 0 0 1 3.5 5.7 2.5 2.5 0 0 1 6 3Z"/></svg>
+              <div><dt>Telefone e WhatsApp</dt>
+                <dd><a href="https://wa.me/554799886297" target="_blank" rel="noopener">(47) 99886-6297</a></dd>
               </div>
             </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-3">
-                  <img src="img/chale/quarto-2.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal9">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/chale/sala-1.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal10">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/chale/sala-2.jpeg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal11">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/chale/exterior-lateral-chale.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal12">
-                </div>
+            <div class="dado">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4"/><path d="m11 12 8-8 2 2-2 2 2 2-2 2-2-2-2 2-2-2"/></svg>
+              <div><dt>Reservas</dt>
+                <dd><a href="https://www.airbnb.com.br/rooms/50617195" target="_blank" rel="noopener">Anúncio do chalé no Airbnb</a></dd>
               </div>
             </div>
-          </div>
-          <a class="carousel-control-prev" href="#imageCarousel" id="carrossel-prev" role="button" data-slide="prev">
-            <i class="bi bi-chevron-compact-left"></i>
-            <span class="sr-only">Anterior</span>
+            <div class="dado">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17"/><path d="M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>
+              <div><dt>Redes</dt>
+                <dd><a href="https://www.instagram.com/sitiorosengarten/" target="_blank" rel="noopener">@sitiorosengarten</a> · <a href="https://www.facebook.com/people/S%C3%ADtio-Rosengarten/100063441835421/" target="_blank" rel="noopener">Facebook</a></dd>
+              </div>
+            </div>
+          </dl>
+        </div>
+
+        <figure class="faixa__figura revelar">
+          <div class="faixa__foto"><picture>
+            <source type="image/webp" srcset="assets/img/aerea_8-480.webp 480w, assets/img/aerea_8-960.webp 960w, assets/img/aerea_8-1600.webp 1600w" sizes="(min-width: 56rem) 45vw, 92vw">
+            <img src="assets/img/aerea_8.jpg" width="1200" height="675" alt="Vista aérea da estrada de acesso ao sítio, com a casa centenária e a lagoa" loading="lazy" decoding="async">
+            </picture></div>
+          <figcaption class="faixa__legenda">A chegada ao sítio, vista de cima.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <div class="envelope">
+      <div class="rodape__topo">
+        <img src="assets/img/rosengarten_logo_bw-360.webp" width="720" height="508" alt="Sítio Rosengarten" loading="lazy" decoding="async">
+        <div class="rodape__redes">
+          <a class="rodape__rede" href="https://www.instagram.com/sitiorosengarten/" target="_blank" rel="noopener" aria-label="Instagram do Sítio Rosengarten">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4 1 .5.4.8.8 1 1.4.2.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-1 1.4-.4.5-.8.8-1.4 1-.4.2-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-1-.5-.4-.8-.8-1-1.4-.2-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 1-1.4.4-.5.8-.8 1.4-1 .4-.2 1-.3 2.2-.4 1.3-.1 1.7-.1 4.7-.1Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.3-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.1.4-.2 1-.3 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.3 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.1 1 .2 2.1.3 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.3.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.1-.4.2-1 .3-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.3-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.1-1-.2-2.1-.3-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm6.2-8.2a1.1 1.1 0 1 1-2.3 0 1.1 1.1 0 0 1 2.3 0Z"/></svg>
           </a>
-          <a class="carousel-control-next" href="#imageCarousel" id="carrossel-next" role="button" data-slide="next">
-            <i class="bi bi-chevron-compact-right"></i>
-            <span class="sr-only">Próximo</span>
+          <a class="rodape__rede" href="https://www.facebook.com/people/S%C3%ADtio-Rosengarten/100063441835421/" target="_blank" rel="noopener" aria-label="Facebook do Sítio Rosengarten">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.3 0-1.7.8-1.7 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg>
           </a>
-        </div>
-
-        <!-- Modais de Imagem -->
-        <div class="modal fade" id="imagemModal1" tabindex="-1" role="dialog" aria-labelledby="imagemModal1Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal1Label">Chalé Aereo Frente</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/chale_aereo_frente.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal2" tabindex="-1" role="dialog" aria-labelledby="imagemModal2Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal2Label">Chalé Lateral</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/chale_lateral_1.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal3" tabindex="-1" role="dialog" aria-labelledby="imagemModal3Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal3Label">Chalé Atrás</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/chale_tras.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal4" tabindex="-1" role="dialog" aria-labelledby="imagemModal4Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal4Label">Vista do Chalé</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/vista_chale.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal5" tabindex="-1" role="dialog" aria-labelledby="imagemModal5Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal5Label">Churrasqueira</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/churrasqueira.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal6" tabindex="-1" role="dialog" aria-labelledby="imagemModal6Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal6Label">Cozinha</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/cozinha.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal7" tabindex="-1" role="dialog" aria-labelledby="imagemModal7Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal7Label">Banheiro</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/banheiro.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal8" tabindex="-1" role="dialog" aria-labelledby="imagemModal8Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal8Label">Quarto</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/quarto-1.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal9" tabindex="-1" role="dialog" aria-labelledby="imagemModal9Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal9Label">Quarto</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/quarto-2.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal10" tabindex="-1" role="dialog" aria-labelledby="imagemModal10Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal10Label">Sala e Cozinha</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/sala-1.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal11" tabindex="-1" role="dialog" aria-labelledby="imagemModal11Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal11Label">Sala</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/sala-2.jpeg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal12" tabindex="-1" role="dialog" aria-labelledby="imagemModal12Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal12Label">Exterior Lateral Chalé</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/chale/exterior-lateral-chale.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12" id="featured-images">
-      <h2>Avaliações:</h2>
-      <div class="container">
-        <div id="avaliacoesCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="35000">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/1.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal1">
-                </div>
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/2.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal9">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/3.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal1">
-                </div>
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/4.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal9">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/5.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal1">
-                </div>
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/6.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal9">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/7.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal1">
-                </div>
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/8.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal9">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/9.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal1">
-                </div>
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/10.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal9">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/12.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal1">
-                </div>
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/13.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal9">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/14.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal1">
-                </div>
-                <div class="col-md-6">
-                  <img src="img/avaliacoes/15.png" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal9">
-                </div>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#avaliacoesCarousel" id="carrossel-prev" role="button"
-            data-slide="prev">
-            <i class="bi bi-chevron-compact-left"></i>
-            <span class="sr-only">Anterior</span>
-          </a>
-          <a class="carousel-control-next" href="#avaliacoesCarousel" id="carrossel-next" role="button"
-            data-slide="next">
-            <i class="bi bi-chevron-compact-right"></i>
-            <span class="sr-only">Próximo</span>
+          <a class="rodape__rede" href="https://wa.me/554799886297" target="_blank" rel="noopener" aria-label="WhatsApp do Sítio Rosengarten">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8Zm-3.3 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.2.9 2.6.7 3.1.7.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.2-.7.1l-.7.9c-.1.2-.3.2-.5.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.1-.3 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5v-.5c-.1-.1-.7-1.6-.9-2.2-.2-.5-.4-.4-.6-.4h-.5Z"/></svg>
           </a>
         </div>
       </div>
-      <img id="nota-geral" src="img/avaliacoes/nota_geral.png" class="d-block w-100" alt="nota geral" />
-      <br>
-    </div>
-  </div>
-
-  <!-- FOTOS -->
-  <div class="container" id="fotos-container">
-    <div class="col-12">
-      <h2 class="title primary-color">Fotos</h2>
-      <div class="container">
-        <div id="fotosCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="row">
-                <div class="col-md-3">
-                  <img src="img/aerea_1.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imagemModal1">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/aerea_3.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imagemModal2">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/aerea_4.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imagemModal3">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/aerea_5.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imagemModal4">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-3">
-                  <img src="img/aerea_7.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imagemModal5">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/aerea_9.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imagemModal6">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/casa_centenaria_frente_1.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal7">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/casa_centenaria_lateral.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal8">
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="row">
-                <div class="col-md-3">
-                  <img src="img/lagoa.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imagemModal9">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/lagoa_rancho_patos.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal10">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/ribeirao.jpg" class="gallery-img" data-bs-toggle="modal"
-                    data-bs-target="#imagemModal11">
-                </div>
-                <div class="col-md-3">
-                  <img src="img/aerea_1.jpg" class="gallery-img" data-bs-toggle="modal" data-bs-target="#imagemModal12">
-                </div>
-              </div>
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#imageCarousel" id="carrossel-prev" role="button" data-slide="prev">
-            <i class="bi bi-chevron-compact-left"></i>
-            <span class="sr-only">Anterior</span>
-          </a>
-          <a class="carousel-control-next" href="#imageCarousel" id="carrossel-next" role="button" data-slide="next">
-            <i class="bi bi-chevron-compact-right"></i>
-            <span class="sr-only">Próximo</span>
-          </a>
-        </div>
-
-        <!-- Modais de Imagem -->
-        <div class="modal fade" id="imagemModal1" tabindex="-1" role="dialog" aria-labelledby="imagemModal1Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal1Label">Aerea</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/aerea_1.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal2" tabindex="-1" role="dialog" aria-labelledby="imagemModal2Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal2Label">Aerea</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/aerea_3.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal3" tabindex="-1" role="dialog" aria-labelledby="imagemModal3Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal3Label">Aerea</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/aerea_4.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal4" tabindex="-1" role="dialog" aria-labelledby="imagemModal4Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal4Label">Aerea</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/aerea_5.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal5" tabindex="-1" role="dialog" aria-labelledby="imagemModal5Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal5Label">Aerea</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/aerea_7.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal6" tabindex="-1" role="dialog" aria-labelledby="imagemModal6Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal6Label">Aerea</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/aerea_9.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal7" tabindex="-1" role="dialog" aria-labelledby="imagemModal7Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal7Label">Casa Centenária Frente</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/casa_centenaria_frente_1.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal8" tabindex="-1" role="dialog" aria-labelledby="imagemModal8Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal8Label">Casa Centenária</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/casa_centenaria_lateral.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal9" tabindex="-1" role="dialog" aria-labelledby="imagemModal9Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal9Label">Lagoa</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/lagoa.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal10" tabindex="-1" role="dialog" aria-labelledby="imagemModal10Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal10Label">Lagoa</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/lagoa_rancho_patos.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal fade" id="imagemModal11" tabindex="-1" role="dialog" aria-labelledby="imagemModal11Label"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="imagemModal11Label">Ribeirão</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img src="img/ribeirao.jpg" class="img-fluid">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <!-- FOOTER -->
-  <footer class="container-fluid bg-dark-color" id="footer">
-    <div class="container">
-      <div class="row">
-        <!-- FOOTER DETAILS-->
-        <div class="col-12" id="footer-details">
-          <div class="row">
-            <div class="col-12 col-md-4" id="contact-container">
-              <h4>Contato:</h4>
-              <p class="secondary-color">Telefone: +55 (47) 9988-6297</p>
-              <form>
-                <button class="btn btn-dark"><a href="https://wa.me/554799886297" target="_blank"><i
-                      class="bi bi-whatsapp"></i> Clique aqui e converse agora!</a></button>
-              </form>
-
-            </div>
-            <div class="col-12 col-md-4" id="localizacao-container">
-              <div class="row">
-                <h4>Localização:</h4>
-                <i class="fa-solid fa-location-dot"><a target="_blank"
-                    href="https://www.google.com/maps/place/Aurora,+SC,+89186-000/data=!4m2!3m1!1s0x94dfbe41d7b3972d:0x219da340ac34c1fd?sa=X&ved=2ahUKEwiOxIik3vr_AhVNq5UCHbn9Bj0Q8gF6BAgQEAA&ved=2ahUKEwiOxIik3vr_AhVNq5UCHbn9Bj0Q8gF6BAgREAI">
-                    Aurora - SC</a></i>
-              </div>
-            </div>
-            <div class="col-12 col-md-4" id="social-container">
-              <h4>Redes Sociais:</h4>
-              <a href="https://www.facebook.com/people/S%C3%ADtio-Rosengarten/100063441835421/" target="_blank"><i
-                  class="bi bi-facebook"></i></a>
-              <a href="https://www.instagram.com/sitiorosengarten/" target="_blank"><i class="bi bi-instagram"></i></a>
-            </div>
-          </div>
-        </div>
-        <!-- FOOTER BOTTOM -->
-        <div class="col-12" id="footer-bottom">
-          <div class="row justify-content-between">
-            <div class="col-12 col-md-3">
-              <p class="secondary-color">Sítio RosenGarten &copy; 2016</p>
-            </div>
-            <div class="col-12 col-md-3">
-              <p class="secondary-color">Desenvolvido por Gabriel Schulze</p>
-            </div>
-          </div>
-        </div>
+      <div class="rodape__base">
+        <p>Sítio Rosengarten · Desde 1929 · Aurora, Santa Catarina</p>
+        <p>© <span data-ano>2026</span> · Desenvolvido por Gabriel Schulze</p>
       </div>
     </div>
   </footer>
+
+  <dialog class="lightbox" data-lightbox-dialog aria-label="Foto ampliada">
+    <div class="lightbox__palco">
+      <div class="lightbox__quadro">
+        <img data-lightbox-img src="" alt="">
+      </div>
+      <div class="lightbox__rodape">
+        <button class="lightbox__btn" type="button" data-lightbox-anterior>
+          <span class="visualmente-oculto">Foto anterior</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg>
+        </button>
+        <span class="lightbox__contagem" data-lightbox-contagem></span>
+        <button class="lightbox__btn" type="button" data-lightbox-proximo>
+          <span class="visualmente-oculto">Próxima foto</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+    <button class="lightbox__btn lightbox__fechar" type="button" data-lightbox-fechar>
+      <span class="visualmente-oculto">Fechar</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19"/></svg>
+    </button>
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>
