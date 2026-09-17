@@ -147,6 +147,7 @@ img { height: auto; }
 .hero__foto picture,
 .paisagem__foto picture,
 .faixa__foto picture,
+.historia__foto picture,
 .foto picture {
   display: block;
   width: 100%;
@@ -590,6 +591,78 @@ button { font: inherit; color: inherit; }
 
 :root[data-theme="dark"] .marca-cor { display: none; }
 :root[data-theme="dark"] .marca-clara { display: block; }
+
+/* --- 8b. História: leitura corrida -------------------------------------- */
+
+/* O texto da família tem umas 600 palavras, longe do que uma faixa de duas
+   colunas aguenta. Aqui ele corre numa coluna de ~65 caracteres, com fotos
+   largas quebrando a leitura. A medida casa com a coluna de texto da faixa
+   acima, então o alinhamento à esquerda não muda ao longo da seção. */
+.historia {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 5vw, 4rem);
+  margin-block-start: clamp(2.5rem, 5vw, 4rem);
+}
+
+.narrativa {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  max-width: 34rem;
+}
+.narrativa p { color: var(--texto-suave); }
+
+/* Primeiro parágrafo em corpo maior, para puxar a leitura. */
+.faixa__texto .lede,
+.narrativa .lede {
+  font-size: var(--passo-1);
+  color: var(--texto);
+}
+
+.historia__figura { margin: 0; }
+
+.historia__foto {
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: var(--raio);
+  background: var(--linha);
+}
+.historia__foto img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Nota de contexto: informação de apoio, não parte do texto da família, então
+   num tom mais baixo. Em tela larga ela ocupa a margem à direita da coluna de
+   leitura, que de outro modo ficaria vazia por toda a seção. */
+.historia__fim {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 74rem) {
+  .historia__fim { grid-template-columns: minmax(0, 34rem) 1fr; }
+  .ficha {
+    padding-block-start: 0;
+    border-block-start: 0;
+    padding-inline-start: clamp(1.5rem, 3vw, 2.5rem);
+    border-inline-start: 1px solid var(--linha-forte);
+  }
+}
+
+.ficha {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 34rem;
+  padding-block-start: 1.75rem;
+  border-block-start: 1px solid var(--linha-forte);
+}
+
+.ficha__nota { color: var(--texto-tenue); }
+.ficha__nota strong { color: var(--texto-suave); font-weight: 600; }
+.ficha .selo { margin-block-start: 0; }
 
 /* --- 9. Chalé: comodidades ---------------------------------------------- */
 

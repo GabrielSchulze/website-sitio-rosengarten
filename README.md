@@ -67,10 +67,6 @@ acima e aponte o `<picture>` correspondente no `index.html` para o novo nome.
 
 ## O que ainda precisa da sua mão
 
-- **A história da casa.** A seção "A casa de 1929" está escrita a partir do que
-  se vê nas fotos e no brasão: a técnica do enxaimel, a data de 1929, o nome em
-  alemão. Falta a história de verdade — quem construiu, quem morou, como o sítio
-  chegou até aqui. Há um `<!-- TODO -->` no ponto exato do `index.html`.
 - **Endereço final.** O `<link rel="canonical">`, as tags Open Graph e o
   `application/ld+json` no `<head>` apontam para `https://sitiorosengarten.com.br/`.
   Se o site for para outro domínio, é só trocar nesses três lugares.
