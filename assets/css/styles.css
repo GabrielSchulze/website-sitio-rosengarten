@@ -573,19 +573,23 @@ button { font: inherit; color: inherit; }
 .faixa__texto { display: flex; flex-direction: column; gap: 1.15rem; }
 .faixa__texto p { color: var(--texto-suave); }
 
-/* O brasão entra como uma placa esmaltada, sobre branco, porque o arquivo
-   original tem fundo branco chapado. */
+/* O brasão é servido com fundo transparente (veja tools/logo-alpha.mjs), então
+   assenta direto sobre o fundo da seção. A versão colorida tem o letreiro em
+   preto e só funciona em fundo claro; no tema escuro entra a versão branca. */
 .selo {
-  display: inline-block;
   align-self: flex-start;
-  margin-block-start: 0.5rem;
-  padding: 0.9rem 1.25rem;
-  background: #fff;
-  border: 1px solid var(--linha);
-  border-radius: var(--raio);
-  box-shadow: var(--sombra);
+  margin-block-start: 0.75rem;
 }
-.selo img { width: clamp(9rem, 22vw, 12rem); height: auto; }
+.selo img { width: clamp(10.5rem, 26vw, 15rem); height: auto; }
+.marca-clara { display: none; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .marca-cor { display: none; }
+  :root:not([data-theme="light"]) .marca-clara { display: block; }
+}
+
+:root[data-theme="dark"] .marca-cor { display: none; }
+:root[data-theme="dark"] .marca-clara { display: block; }
 
 /* --- 9. Chalé: comodidades ---------------------------------------------- */
 

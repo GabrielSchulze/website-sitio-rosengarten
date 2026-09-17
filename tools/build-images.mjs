@@ -41,18 +41,20 @@ for (const file of files) {
   bytesIn += (await stat(file)).size;
   const image = sharp(file);
   const meta = await image.metadata();
-  const isLogo = /logo|fav-icon/i.test(base);
+
+  // As marcas de img/marca/ têm transparência: saem em PNG e WebP, nunca em
+  // JPEG. Os arquivos de logo originais são a fonte delas (veja
+  // tools/logo-alpha.mjs) e não precisam de versão web própria.
+  const isLogo = /^marca[/\\]/.test(rel);
+  if (/rosengarten_logo|fav-icon/i.test(base)) continue;
 
   // Logos e ícones mantêm transparência e saem em PNG + WebP.
   const widths = isLogo
-    ? [360, 720].filter((w) => w <= meta.width)
+    ? [180, 360, 720].filter((w) => w <= meta.width)
     : WIDTHS.filter((w) => w <= meta.width).concat(meta.width < WIDTHS[0] ? [meta.width] : []);
 
-  // Os arquivos de logo vêm numa tela quadrada com muita margem vazia;
-  // sem recortar, a marca fica minúscula dentro do cabeçalho.
-  // O favicon fica de fora: precisa continuar quadrado.
-  const recortar = isLogo && !/fav-icon/i.test(base);
-  const preparar = () => (recortar ? sharp(file).trim({ threshold: 12 }) : sharp(file));
+  // As marcas já saem recortadas do logo-alpha.mjs.
+  const preparar = () => sharp(file);
 
   for (const w of widths) {
     const target = path.join(dir, `${base}-${w}.webp`);
@@ -69,7 +71,7 @@ for (const file of files) {
     withoutEnlargement: true,
   });
   await (isLogo
-    ? pipeline.png({ compressionLevel: 9, palette: true })
+    ? pipeline.png({ compressionLevel: 9 })
     : pipeline.jpeg({ quality: 78, mozjpeg: true })
   ).toFile(fallback);
   bytesOut += (await stat(fallback)).size;

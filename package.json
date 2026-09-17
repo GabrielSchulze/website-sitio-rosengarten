@@ -4,6 +4,7 @@
   "private": true,
   "description": "Site do Sítio Rosengarten — Aurora, Santa Catarina",
   "scripts": {
+    "build:marca": "node tools/logo-alpha.mjs",
     "build:img": "node tools/build-images.mjs",
     "dev": "node --run serve",
     "serve": "node tools/serve.mjs"

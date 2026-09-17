@@ -15,7 +15,9 @@ assets/css/styles.css   estilos (tokens de cor e tipografia no topo do arquivo)
 assets/js/main.js       menu, lightbox, carrossel de depoimentos
 assets/img/             imagens otimizadas que o site serve (geradas — veja abaixo)
 img/                    fotos originais, fonte da verdade para gerar assets/img/
+img/marca/              o brasão com fundo transparente (gerado — veja abaixo)
 tools/build-images.mjs  gera assets/img/ a partir de img/
+tools/logo-alpha.mjs    gera img/marca/ a partir dos arquivos de logo
 tools/serve.mjs         servidor estático para desenvolvimento
 ```
 
@@ -25,6 +27,29 @@ tools/serve.mjs         servidor estático para desenvolvimento
 npm install     # só para as ferramentas; o site em si não tem dependências
 npm run serve   # http://localhost:4173
 ```
+
+## A marca
+
+Os arquivos originais do logo (`img/rosengarten_logo.png`, `img/fav-icon.png`)
+têm fundo branco chapado, o que obrigaria a colocar o brasão dentro de uma caixa
+branca sobre qualquer fundo colorido. O `tools/logo-alpha.mjs` remove o branco
+**externo** por preenchimento a partir das bordas — preservando os brancos
+internos, como o céu atrás da árvore e o texto "1929" — e gera:
+
+| arquivo | onde é usado |
+| --- | --- |
+| `brasao-cor.png` | seção "A casa de 1929", tema claro |
+| `brasao-claro.png` | a mesma seção no tema escuro, onde o letreiro preto sumiria |
+| `brasao-preto.png` | cabeçalho e rodapé, invertido para branco quando o fundo é escuro |
+| `icone.png` | favicon — só a arcada com a árvore, porque o letreiro inteiro fica ilegível abaixo de 64 px |
+| `icone-toque.png` | ícone da tela inicial do iOS, achatado sobre a cor de fundo |
+
+```bash
+npm run build:marca   # regenera img/marca/
+npm run build:img     # e depois assets/img/
+```
+
+Rode os dois na ordem ao trocar os arquivos de logo.
 
 ## Imagens
 
