@@ -487,6 +487,20 @@ button { font: inherit; color: inherit; }
   text-shadow: 0 2px 30px rgb(0 0 0 / 35%);
 }
 
+/* Segunda linha do h1: o slogan segue sendo a manchete, e esta linha diz o que
+   é e onde fica — o que as pessoas de fato digitam na busca. */
+.hero__subtitulo {
+  display: block;
+  margin-block-start: 0.85rem;
+  font-family: var(--fonte-texto);
+  font-size: var(--passo-1);
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-shadow: none;
+  color: rgb(255 255 255 / 92%);
+}
+
 .hero__resumo {
   max-width: 46ch;
   font-size: var(--passo-1);
@@ -708,6 +722,15 @@ button { font: inherit; color: inherit; }
 
 .comodidade strong { display: block; font-weight: 600; }
 .comodidade span { font-size: var(--passo--1); color: var(--texto-tenue); }
+
+/* Subtítulo dos blocos internos de uma seção. Eram invisíveis; visíveis
+   ajudam a varrer a página com os olhos e dão estrutura ao que o Google lê. */
+.bloco-titulo {
+  margin-block-start: clamp(2.75rem, 5vw, 4rem);
+  font-size: var(--passo-2);
+}
+.bloco-titulo + .comodidades,
+.bloco-titulo + .tira { margin-block-start: 1.35rem; }
 
 /* --- 10. Galerias ------------------------------------------------------- */
 

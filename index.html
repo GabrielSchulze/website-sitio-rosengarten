@@ -5,24 +5,46 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <title>Sítio Rosengarten — chalé para dois em Aurora, Santa Catarina</title>
-  <meta name="description" content="Chalé de madeira para duas pessoas no Sítio Rosengarten, em Aurora (SC): fogão a lenha, teto de vidro sobre a cama, varanda de frente para a lagoa e nota 5,0 em limpeza e check-in no Airbnb.">
+  <!-- ENDEREÇO DO SITE ----------------------------------------------------
+       O domínio aparece aqui, no bloco JSON-LD ao fim deste <head>, no
+       robots.txt e no sitemap.xml. Para trocar tudo de uma vez:
+           node tools/set-domain.mjs https://novo-dominio.com.br
+       Enquanto o domínio não estiver registrado e apontando para a
+       hospedagem, o canonical abaixo aponta para o vazio e o Google não
+       indexa o site — registre antes de publicar. -->
   <link rel="canonical" href="https://sitiorosengarten.com.br/">
-  <meta name="theme-color" content="#2c4630">
 
+  <title>Sítio Rosengarten — chalé para casal em Aurora, SC</title>
+  <meta name="description" content="Chalé de madeira para duas pessoas em Aurora (SC), perto de Rio do Sul: fogão a lenha, teto de vidro sobre a cama e varanda de frente para a lagoa.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="theme-color" content="#eef0e8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#11150f" media="(prefers-color-scheme: dark)">
+
+  <!-- Prévia de link no WhatsApp, Facebook, Telegram e afins. A imagem é
+       1200x630 porque qualquer outra proporção é recortada por eles. -->
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:site_name" content="Sítio Rosengarten">
-  <meta property="og:title" content="Sítio Rosengarten — chalé para dois em Aurora, SC">
-  <meta property="og:description" content="Cheirinho de mato, brisa fresca, simplicidade e aconchego. Um chalé de madeira entre a lagoa, o ribeirão e a mata.">
   <meta property="og:url" content="https://sitiorosengarten.com.br/">
-  <meta property="og:image" content="https://sitiorosengarten.com.br/assets/img/casa_centenaria_jardim.jpg">
-  <meta property="og:image:alt" content="Roseiras floridas na frente da casa enxaimel do Sítio Rosengarten">
+  <meta property="og:title" content="Sítio Rosengarten — um chalé no Alto Vale do Itajaí">
+  <meta property="og:description" content="Cheirinho de mato, brisa fresca, simplicidade e aconchego. Chalé de madeira para duas pessoas, entre a lagoa, o ribeirão e a mata.">
+  <meta property="og:image" content="https://sitiorosengarten.com.br/assets/img/compartilhar.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A casa enxaimel do Sítio Rosengarten atrás de um canteiro de roseiras e hortênsias">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="assets/img/marca/icone-180.webp" type="image/webp" sizes="any">
   <link rel="icon" href="assets/img/marca/icone.png" type="image/png" sizes="any">
   <link rel="apple-touch-icon" href="assets/img/marca/icone-toque.png">
+
+  <!-- A foto do hero é o maior elemento da primeira tela; pré-carregá-la
+       encurta o Largest Contentful Paint, que conta no ranking. -->
+  <link rel="preload" as="image" fetchpriority="high"
+    href="assets/img/casa_centenaria_jardim-960.webp"
+    imagesrcset="assets/img/casa_centenaria_jardim-480.webp 480w, assets/img/casa_centenaria_jardim-960.webp 960w, assets/img/casa_centenaria_jardim-1600.webp 1600w"
+    imagesizes="100vw">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,8 +59,18 @@
     {
       "@context": "https://schema.org",
       "@type": "LodgingBusiness",
+      "@id": "#sitio",
       "name": "Sítio Rosengarten",
-      "description": "Chalé de madeira para duas pessoas no Sítio Rosengarten, em Aurora, Santa Catarina.",
+      "alternateName": "Chalé Sítio Rosengarten",
+      "description": "Chalé de madeira para duas pessoas em Aurora (SC), perto de Rio do Sul: fogão a lenha, teto de vidro sobre a cama e varanda de frente para a lagoa.",
+      "url": "https://sitiorosengarten.com.br/",
+      "logo": "https://sitiorosengarten.com.br/assets/img/marca/brasao-cor.png",
+      "image": [
+        "https://sitiorosengarten.com.br/assets/img/compartilhar.jpg",
+        "https://sitiorosengarten.com.br/assets/img/casa_centenaria.jpg"
+      ],
+      "telephone": "+554799886297",
+      "foundingDate": "1929",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Aurora",
@@ -46,15 +78,69 @@
         "postalCode": "89186-000",
         "addressCountry": "BR"
       },
-      "telephone": "+55-47-99886-6297",
-      "url": "https://sitiorosengarten.com.br/",
-      "image": "https://sitiorosengarten.com.br/assets/img/casa_centenaria_jardim.jpg",
-      "petsAllowed": false,
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Aurora"
+        },
+        {
+          "@type": "City",
+          "name": "Rio do Sul"
+        }
+      ],
+      "hasMap": "https://www.google.com/maps/place/Aurora,+SC,+89186-000",
       "sameAs": [
         "https://www.instagram.com/sitiorosengarten/",
         "https://www.facebook.com/people/S%C3%ADtio-Rosengarten/100063441835421/",
         "https://www.airbnb.com.br/rooms/50617195"
-      ]
+      ],
+      "numberOfRooms": 1,
+      "amenityFeature": [
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Fogão a lenha",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Teto de vidro sobre a cama",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Varanda com vista para a lagoa",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Churrasqueira",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Cozinha completa",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Ar-condicionado",
+          "value": true
+        },
+        {
+          "@type": "LocationFeatureSpecification",
+          "name": "Roupa de cama e banho",
+          "value": true
+        }
+      ],
+      "containsPlace": {
+        "@type": "Accommodation",
+        "name": "Chalé",
+        "occupancy": {
+          "@type": "QuantitativeValue",
+          "maxValue": 2,
+          "unitText": "pessoas"
+        }
+      }
     }
   </script>
 </head>
@@ -105,8 +191,8 @@
       <div class="envelope hero__envelope">
        <div class="hero__conteudo">
         <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> Sítio Rosengarten · Aurora, SC</p>
-        <h1>Cheirinho de mato, brisa fresca, simplicidade e aconchego</h1>
-        <p class="hero__resumo">Um chalé de madeira para duas pessoas, no terreno de uma casa enxaimel de 1929 — entre a lagoa, o ribeirão e a mata.</p>
+        <h1>Cheirinho de mato, brisa fresca, simplicidade e aconchego<span class="hero__subtitulo">Chalé para duas pessoas em Aurora, no Alto Vale do Itajaí</span></h1>
+        <p class="hero__resumo">No terreno de uma casa enxaimel de 1929, entre a lagoa, o ribeirão e a mata — a poucos minutos do centro de Rio do Sul.</p>
         <div class="hero__acoes">
           <a class="botao botao--principal" href="https://www.airbnb.com.br/rooms/50617195" target="_blank" rel="noopener">Reservar no Airbnb</a>
           <a class="botao botao--contorno" href="https://wa.me/554799886297" target="_blank" rel="noopener">Falar no WhatsApp</a>
@@ -160,7 +246,7 @@
     <section class="secao secao--alt" id="historia">
       <div class="envelope">
         <div class="cabecalho-secao">
-          <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> A casa de 1929</p>
+          <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> A casa enxaimel de 1929</p>
           <h2>Um refúgio de tranquilidade</h2>
         </div>
       </div>
@@ -224,7 +310,7 @@
         </figure>
         <div class="faixa__texto">
           <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> A hospedagem</p>
-          <h2>O chalé</h2>
+          <h2>O chalé de madeira</h2>
           <p>Chalé de madeira para duas pessoas, num canto reservado do sítio. Tem fogão a lenha na sala, um trecho de teto de vidro logo acima da cama — dá pra dormir olhando o céu — e uma varanda de frente para a lagoa e para o mato.</p>
           <p>A cozinha é completa, a churrasqueira fica na própria varanda, e quem chega costuma encontrar pão fresco, doces caseiros e ovos da granja esperando na mesa.</p>
           <p><a class="botao botao--principal" href="https://www.airbnb.com.br/rooms/50617195" target="_blank" rel="noopener">Ver datas e reservar</a></p>
@@ -232,7 +318,7 @@
       </div>
 
       <div class="envelope">
-        <h3 class="visualmente-oculto">O que tem no chalé</h3>
+        <h3 class="bloco-titulo">O que tem no chalé</h3>
         <ul class="comodidades" role="list">
           <li class="comodidade">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c.6 3 2.2 4 3.6 5.6A6.8 6.8 0 0 1 17.5 13a5.5 5.5 0 0 1-11 0c0-1.6.6-2.7 1.4-3.6.3 1 .9 1.7 1.7 2 .1-2.9 1-5.6 2.4-8.4Z"/><path d="M12 21a2.6 2.6 0 0 1-2.6-2.6c0-1.6 1.6-2.4 2.6-4.4 1 2 2.6 2.8 2.6 4.4A2.6 2.6 0 0 1 12 21Z"/></svg>
@@ -270,7 +356,7 @@
       </div>
 
       <div class="envelope">
-        <h3 class="visualmente-oculto">Fotos do chalé</h3>
+        <h3 class="bloco-titulo">Fotos do chalé</h3>
         <div class="tira">
           <button type="button" class="foto" data-lightbox data-full="assets/img/chale/chale_frente-1600.webp" data-legenda="Fachada do chalé de madeira com escada de pedra e varanda">
             <picture>
@@ -588,7 +674,7 @@
       <div class="envelope contato">
         <div class="faixa__texto">
           <p class="sobrelinha"><svg class="escora" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 1.5v13h13"/><path d="M1.5 7.5l7 7"/></svg> Contato</p>
-          <h2>Como chegar e falar com a gente</h2>
+          <h2>Como chegar ao Sítio Rosengarten</h2>
           <p class="introducao">O sítio fica em Aurora, no Alto Vale do Itajaí, perto do centro de Rio do Sul e com acesso fácil pela rodovia.</p>
 
           <dl class="dados">

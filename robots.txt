@@ -1,0 +1,7 @@
+# Sítio Rosengarten — https://sitiorosengarten.com.br
+# Site de uma página: nada a bloquear.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://sitiorosengarten.com.br/sitemap.xml

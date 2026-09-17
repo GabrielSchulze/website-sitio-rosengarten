@@ -80,3 +80,41 @@ for (const file of files) {
 
 const mb = (n) => (n / 1024 / 1024).toFixed(1) + ' MB';
 console.log(`${files.length} originais (${mb(bytesIn)}) -> ${written} arquivos (${mb(bytesOut)})`);
+
+/* --- Imagem de compartilhamento ----------------------------------------
+   O que o WhatsApp, o Facebook e o Google mostram na prévia de link. Precisa
+   ser 1200x630: qualquer outra proporção é recortada por eles, geralmente
+   cortando fora o assunto. A marca em branco no canto faz o cartão ser
+   reconhecido quando alguém repassa o link. */
+
+const CARTAO = { w: 1200, h: 630 };
+
+const foto = await sharp('img/casa_centenaria_jardim.jpg')
+  .resize({ width: CARTAO.w, height: CARTAO.h, fit: 'cover', position: 'attention' })
+  .toBuffer();
+
+const escurecer = Buffer.from(
+  `<svg width="${CARTAO.w}" height="${CARTAO.h}" xmlns="http://www.w3.org/2000/svg">
+     <defs>
+       <linearGradient id="s" x1="0" y1="1" x2="0.55" y2="0">
+         <stop offset="0" stop-color="#0a0e09" stop-opacity="0.88"/>
+         <stop offset="0.45" stop-color="#0a0e09" stop-opacity="0.35"/>
+         <stop offset="1" stop-color="#0a0e09" stop-opacity="0"/>
+       </linearGradient>
+     </defs>
+     <rect width="${CARTAO.w}" height="${CARTAO.h}" fill="url(#s)"/>
+   </svg>`,
+);
+
+const marcaCartao = await sharp('img/marca/brasao-claro.png').resize({ width: 380 }).toBuffer();
+const { height: mh } = await sharp(marcaCartao).metadata();
+
+await sharp(foto)
+  .composite([
+    { input: escurecer, top: 0, left: 0 },
+    { input: marcaCartao, left: 56, top: CARTAO.h - mh - 48 },
+  ])
+  .jpeg({ quality: 84, mozjpeg: true })
+  .toFile(path.join(OUT, 'compartilhar.jpg'));
+
+console.log(`${OUT}/compartilhar.jpg  ${CARTAO.w}x${CARTAO.h}`);
