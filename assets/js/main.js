@@ -126,7 +126,7 @@
 
     $$('[data-lightbox]').forEach((botao) => {
       botao.addEventListener('click', () => {
-        const caixa = botao.closest('.tira, .grade-fotos') || document;
+        const caixa = botao.closest('.carrossel__trilho, .paisagens') || document;
         grupo = $$('[data-lightbox]', caixa);
         origem = botao;
         mostrar(grupo.indexOf(botao));
@@ -168,41 +168,49 @@
     });
   }
 
-  /* --- Tiras horizontais ------------------------------------------------- */
+  /* --- Carrosséis -------------------------------------------------------- */
 
   const botoesRolagem = $$('[data-rolar]');
 
-  for (const faixa of $$('[data-rolagem]')) {
-    const botoes = botoesRolagem.filter((b) => b.dataset.rolar === faixa.id);
-    if (!botoes.length) continue;
+  for (const trilho of $$('[data-trilho]')) {
+    const carrossel = trilho.closest('.carrossel');
+    const botoes = botoesRolagem.filter((b) => b.dataset.rolar === trilho.id);
+    const progresso = $('[data-progresso]', carrossel);
 
+    // Os itens são dimensionados para caber um número inteiro na largura
+    // visível, então uma tela cheia equivale à largura visível mais um vão —
+    // andar por esse passo mantém tudo encaixado nas bordas.
     const passo = () => {
-      const item = faixa.firstElementChild;
-      if (!item) return faixa.clientWidth;
-      const espaco = parseFloat(getComputedStyle(faixa).columnGap) || 16;
-      return item.getBoundingClientRect().width + espaco;
+      const vao = parseFloat(getComputedStyle(trilho).columnGap) || 16;
+      return trilho.clientWidth + vao;
     };
 
-    // Desabilita a seta que não tem mais para onde ir, em vez de deixar um
-    // botão que parece funcionar e não faz nada.
-    const marcar = () => {
-      const fim = faixa.scrollWidth - faixa.clientWidth - 2;
+    const atualizar = () => {
+      const sobra = trilho.scrollWidth - trilho.clientWidth;
+
       for (const botao of botoes) {
-        botao.disabled = Number(botao.dataset.direcao) < 0
-          ? faixa.scrollLeft <= 2
-          : faixa.scrollLeft >= fim;
+        botao.disabled = sobra <= 2 || (Number(botao.dataset.direcao) < 0
+          ? trilho.scrollLeft <= 2
+          : trilho.scrollLeft >= sobra - 2);
+      }
+
+      if (progresso) {
+        const visivel = trilho.clientWidth / trilho.scrollWidth;
+        const posicao = sobra > 0 ? (trilho.scrollLeft / sobra) * (1 - visivel) : 0;
+        progresso.style.width = `${visivel * 100}%`;
+        progresso.style.marginInlineStart = `${posicao * 100}%`;
       }
     };
 
     for (const botao of botoes) {
       botao.addEventListener('click', () => {
-        faixa.scrollBy({ left: passo() * Number(botao.dataset.direcao), behavior: 'smooth' });
+        trilho.scrollBy({ left: passo() * Number(botao.dataset.direcao), behavior: 'smooth' });
       });
     }
 
-    faixa.addEventListener('scroll', marcar, { passive: true });
-    addEventListener('resize', marcar);
-    marcar();
+    trilho.addEventListener('scroll', atualizar, { passive: true });
+    addEventListener('resize', atualizar);
+    atualizar();
   }
 
   /* --- Entrada suave das figuras ---------------------------------------- */
