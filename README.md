@@ -22,6 +22,7 @@ sitemap.xml             a única página do site
 tools/build-images.mjs  gera assets/img/ a partir de img/
 tools/logo-alpha.mjs    gera img/marca/ a partir dos arquivos de logo
 tools/set-domain.mjs    troca o endereço do site em todos os arquivos
+tools/build-dist.mjs    monta dist/ com só o que vai para o servidor
 tools/serve.mjs         servidor estático para desenvolvimento
 ```
 
@@ -86,6 +87,20 @@ npm run build:img
 
 Ao trocar ou acrescentar uma foto: coloque o arquivo em `img/`, rode o comando
 acima e aponte o `<picture>` correspondente no `index.html` para o novo nome.
+
+## Pacote para a hospedagem
+
+Para entregar o site a quem vai hospedá-lo, sem os originais de `img/` nem as
+ferramentas:
+
+```bash
+npm run build:dist
+```
+
+Monta `dist/` com apenas o que a página referencia — HTML, CSS, JS, fontes e as
+imagens realmente usadas — mais `robots.txt`, `sitemap.xml` e os arquivos de
+licença das fontes. Cerca de 20 MB contra os 60 MB do repositório. O script
+avisa se alguma referência ficar sem arquivo. `dist/` é ignorado pelo git.
 
 ## Publicar
 

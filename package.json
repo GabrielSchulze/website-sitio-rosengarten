@@ -7,6 +7,7 @@
     "build:fonts": "node tools/build-fonts.mjs",
     "build:marca": "node tools/logo-alpha.mjs",
     "build:img": "node tools/build-images.mjs",
+    "build:dist": "node tools/build-dist.mjs",
     "dev": "node --run serve",
     "serve": "node tools/serve.mjs"
   },
