@@ -16,6 +16,7 @@ assets/js/main.js       menu, lightbox, carrossel de depoimentos
 assets/img/             imagens otimizadas que o site serve (geradas — veja abaixo)
 img/                    fotos originais, fonte da verdade para gerar assets/img/
 img/marca/              o brasão com fundo transparente (gerado — veja abaixo)
+assets/fonts/           Fraunces e Archivo servidas deste domínio (geradas)
 robots.txt              libera tudo e aponta o sitemap
 sitemap.xml             a única página do site
 tools/build-images.mjs  gera assets/img/ a partir de img/
@@ -30,6 +31,24 @@ tools/serve.mjs         servidor estático para desenvolvimento
 npm install     # só para as ferramentas; o site em si não tem dependências
 npm run serve   # http://localhost:4173
 ```
+
+## Fontes
+
+Fraunces e Archivo são servidas do próprio domínio em vez do Google Fonts.
+Isso tira uma folha de estilo externa do caminho crítico e dois handshakes
+(`fonts.googleapis.com` e `fonts.gstatic.com`) — o site passa a não fazer
+nenhuma requisição a terceiros. O navegador baixa só o subset de que precisa;
+em português, cerca de 180 KB.
+
+```bash
+npm run build:fonts
+```
+
+O script baixa os arquivos, escreve as regras `@font-face` dentro do
+`assets/css/styles.css` entre marcadores e traz junto os `OFL-*.txt`. As duas
+fontes são licenciadas sob a SIL Open Font License 1.1, que permite
+redistribuir desde que a licença acompanhe — por isso os arquivos de licença
+ficam em `assets/fonts/` e não devem ser removidos.
 
 ## A marca
 

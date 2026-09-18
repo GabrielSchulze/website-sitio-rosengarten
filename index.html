@@ -46,9 +46,14 @@
     imagesrcset="assets/img/casa_centenaria_jardim-480.webp 480w, assets/img/casa_centenaria_jardim-960.webp 960w, assets/img/casa_centenaria_jardim-1600.webp 1600w"
     imagesizes="100vw">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..700&family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,400..500&display=swap">
+  <!-- As fontes são servidas deste domínio (npm run build:fonts), então não
+       há folha de estilo externa no caminho crítico nem handshake com o
+       Google. Só as duas faces da primeira tela são pré-carregadas; a
+       itálica do Fraunces só aparece nas citações, mais abaixo. -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="assets/fonts/archivo-latin.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="assets/fonts/fraunces-latin.woff2">
   <link rel="stylesheet" href="assets/css/styles.css">
 
   <!-- Marca que o JavaScript está ativo antes da primeira pintura, para que a
@@ -58,89 +63,124 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LodgingBusiness",
-      "@id": "#sitio",
-      "name": "Sítio Rosengarten",
-      "alternateName": "Chalé Sítio Rosengarten",
-      "description": "Chalé de madeira para duas pessoas em Aurora (SC), perto de Rio do Sul: fogão a lenha, teto de vidro sobre a cama e varanda de frente para a lagoa.",
-      "url": "https://sitiorosengarten.com.br/",
-      "logo": "https://sitiorosengarten.com.br/assets/img/marca/brasao-cor.png",
-      "image": [
-        "https://sitiorosengarten.com.br/assets/img/compartilhar.jpg",
-        "https://sitiorosengarten.com.br/assets/img/casa_centenaria.jpg"
-      ],
-      "telephone": "+554799886297",
-      "foundingDate": "1929",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Aurora",
-        "addressRegion": "SC",
-        "postalCode": "89186-000",
-        "addressCountry": "BR"
-      },
-      "areaServed": [
+      "@graph": [
         {
-          "@type": "City",
-          "name": "Aurora"
+          "@type": "LodgingBusiness",
+          "@id": "#sitio",
+          "name": "Sítio Rosengarten",
+          "alternateName": "Chalé Sítio Rosengarten",
+          "description": "Chalé de madeira para duas pessoas em Aurora (SC), perto de Rio do Sul: fogão a lenha, teto de vidro sobre a cama e varanda de frente para a lagoa.",
+          "url": "https://sitiorosengarten.com.br/",
+          "logo": "https://sitiorosengarten.com.br/assets/img/marca/brasao-cor.png",
+          "image": [
+            "https://sitiorosengarten.com.br/assets/img/compartilhar.jpg",
+            "https://sitiorosengarten.com.br/assets/img/casa_centenaria.jpg"
+          ],
+          "telephone": "+554799886297",
+          "foundingDate": "1929",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Aurora",
+            "addressRegion": "SC",
+            "postalCode": "89186-000",
+            "addressCountry": "BR"
+          },
+          "areaServed": [
+            {
+              "@type": "City",
+              "name": "Aurora"
+            },
+            {
+              "@type": "City",
+              "name": "Rio do Sul"
+            }
+          ],
+          "hasMap": "https://www.google.com/maps/place/Aurora,+SC,+89186-000",
+          "sameAs": [
+            "https://www.instagram.com/sitiorosengarten/",
+            "https://www.facebook.com/people/S%C3%ADtio-Rosengarten/100063441835421/",
+            "https://www.airbnb.com.br/rooms/50617195"
+          ],
+          "numberOfRooms": 1,
+          "amenityFeature": [
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Fogão a lenha",
+              "value": true
+            },
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Teto de vidro sobre a cama",
+              "value": true
+            },
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Varanda com vista para a lagoa",
+              "value": true
+            },
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Churrasqueira",
+              "value": true
+            },
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Cozinha completa",
+              "value": true
+            },
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Ar-condicionado",
+              "value": true
+            },
+            {
+              "@type": "LocationFeatureSpecification",
+              "name": "Roupa de cama e banho",
+              "value": true
+            }
+          ],
+          "containsPlace": {
+            "@type": "Accommodation",
+            "name": "Chalé",
+            "occupancy": {
+              "@type": "QuantitativeValue",
+              "maxValue": 2,
+              "unitText": "pessoas"
+            }
+          }
         },
         {
-          "@type": "City",
-          "name": "Rio do Sul"
+          "@type": "WebSite",
+          "@id": "#site",
+          "url": "https://sitiorosengarten.com.br/",
+          "name": "Sítio Rosengarten",
+          "inLanguage": "pt-BR",
+          "publisher": {
+            "@id": "#sitio"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://sitiorosengarten.com.br/",
+          "url": "https://sitiorosengarten.com.br/",
+          "name": "Sítio Rosengarten — chalé para casal em Aurora, SC",
+          "description": "Chalé de madeira para duas pessoas em Aurora (SC), perto de Rio do Sul: fogão a lenha, teto de vidro sobre a cama e varanda de frente para a lagoa.",
+          "isPartOf": {
+            "@id": "#site"
+          },
+          "about": {
+            "@id": "#sitio"
+          },
+          "inLanguage": "pt-BR",
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://sitiorosengarten.com.br/assets/img/compartilhar.jpg",
+            "width": 1200,
+            "height": 630,
+            "caption": "A casa enxaimel do Sítio Rosengarten atrás de um canteiro de roseiras"
+          }
         }
-      ],
-      "hasMap": "https://www.google.com/maps/place/Aurora,+SC,+89186-000",
-      "sameAs": [
-        "https://www.instagram.com/sitiorosengarten/",
-        "https://www.facebook.com/people/S%C3%ADtio-Rosengarten/100063441835421/",
-        "https://www.airbnb.com.br/rooms/50617195"
-      ],
-      "numberOfRooms": 1,
-      "amenityFeature": [
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Fogão a lenha",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Teto de vidro sobre a cama",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Varanda com vista para a lagoa",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Churrasqueira",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Cozinha completa",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Ar-condicionado",
-          "value": true
-        },
-        {
-          "@type": "LocationFeatureSpecification",
-          "name": "Roupa de cama e banho",
-          "value": true
-        }
-      ],
-      "containsPlace": {
-        "@type": "Accommodation",
-        "name": "Chalé",
-        "occupancy": {
-          "@type": "QuantitativeValue",
-          "maxValue": 2,
-          "unitText": "pessoas"
-        }
-      }
+      ]
     }
   </script>
 </head>
@@ -150,7 +190,7 @@
 
   <header class="header" data-header>
     <div class="envelope header__barra">
-      <a class="marca" href="#" aria-label="Sítio Rosengarten — início">
+      <a class="marca" href="#inicio" aria-label="Sítio Rosengarten — início">
         <img src="assets/img/marca/brasao-preto-360.webp" width="720" height="509" alt="Sítio Rosengarten">
       </a>
 
@@ -181,7 +221,7 @@
   <main id="conteudo">
 
     <!-- Hero ------------------------------------------------------------ -->
-    <section class="hero">
+    <section class="hero" id="inicio">
       <div class="hero__foto">
         <picture>
         <source type="image/webp" srcset="assets/img/casa_centenaria_jardim-480.webp 480w, assets/img/casa_centenaria_jardim-960.webp 960w, assets/img/casa_centenaria_jardim-1600.webp 1600w" sizes="100vw">
@@ -213,27 +253,36 @@
           <h2>A lagoa, o ribeirão e o mato em volta</h2>
         </div>
         <div class="paisagens">
-          <article class="paisagem revelar">
-          <div class="paisagem__foto"><picture>
-            <source type="image/webp" srcset="assets/img/lagoa-480.webp 480w, assets/img/lagoa-960.webp 960w, assets/img/lagoa-1600.webp 1600w" sizes="(min-width: 64rem) 360px, (min-width: 40rem) 45vw, 92vw">
-            <img src="assets/img/lagoa.jpg" width="1200" height="849" alt="Marrecos nadando na lagoa do sítio, com um rancho de madeira na outra margem" loading="lazy" decoding="async">
-            </picture></div>
-          <h3>A lagoa</h3>
-        </article>
-          <article class="paisagem revelar">
-          <div class="paisagem__foto"><picture>
-            <source type="image/webp" srcset="assets/img/ribeirao-480.webp 480w, assets/img/ribeirao-960.webp 960w, assets/img/ribeirao-1600.webp 1600w" sizes="(min-width: 64rem) 360px, (min-width: 40rem) 45vw, 92vw">
-            <img src="assets/img/ribeirao.jpg" width="1200" height="900" alt="Ribeirão correndo entre pedras grandes no fundo do terreno" loading="lazy" decoding="async">
-            </picture></div>
-          <h3>O ribeirão</h3>
-        </article>
-          <article class="paisagem revelar">
-          <div class="paisagem__foto"><picture>
-            <source type="image/webp" srcset="assets/img/aerea_7-480.webp 480w, assets/img/aerea_7-960.webp 960w, assets/img/aerea_7-1600.webp 1600w" sizes="(min-width: 64rem) 360px, (min-width: 40rem) 45vw, 92vw">
-            <img src="assets/img/aerea_7.jpg" width="1200" height="675" alt="Vista aérea do vale, com mata fechada de um lado e pasto do outro" loading="lazy" decoding="async">
-            </picture></div>
-          <h3>A mata</h3>
-        </article>
+          <figure class="paisagem revelar">
+          <button type="button" class="foto paisagem__foto" data-lightbox data-full="assets/img/lagoa-1600.webp" data-legenda="Marrecos nadando na lagoa do sítio, com um rancho de madeira na outra margem">
+            <picture>
+              <source type="image/webp" srcset="assets/img/lagoa-480.webp 480w, assets/img/lagoa-960.webp 960w, assets/img/lagoa-1600.webp 1600w" sizes="(min-width: 64rem) 370px, (min-width: 40rem) 46vw, 92vw">
+              <img src="assets/img/lagoa.jpg" width="1200" height="849" alt="Marrecos nadando na lagoa do sítio, com um rancho de madeira na outra margem" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Marrecos nadando na lagoa do sítio, com um rancho de madeira na outra margem</span>
+          </button>
+          <figcaption><h3>A lagoa</h3></figcaption>
+        </figure>
+          <figure class="paisagem revelar">
+          <button type="button" class="foto paisagem__foto" data-lightbox data-full="assets/img/ribeirao-1600.webp" data-legenda="Ribeirão correndo entre pedras grandes no fundo do terreno">
+            <picture>
+              <source type="image/webp" srcset="assets/img/ribeirao-480.webp 480w, assets/img/ribeirao-960.webp 960w, assets/img/ribeirao-1600.webp 1600w" sizes="(min-width: 64rem) 370px, (min-width: 40rem) 46vw, 92vw">
+              <img src="assets/img/ribeirao.jpg" width="1200" height="900" alt="Ribeirão correndo entre pedras grandes no fundo do terreno" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Ribeirão correndo entre pedras grandes no fundo do terreno</span>
+          </button>
+          <figcaption><h3>O ribeirão</h3></figcaption>
+        </figure>
+          <figure class="paisagem revelar">
+          <button type="button" class="foto paisagem__foto" data-lightbox data-full="assets/img/aerea_7-1600.webp" data-legenda="Vista aérea do vale, com mata fechada de um lado e pasto do outro">
+            <picture>
+              <source type="image/webp" srcset="assets/img/aerea_7-480.webp 480w, assets/img/aerea_7-960.webp 960w, assets/img/aerea_7-1600.webp 1600w" sizes="(min-width: 64rem) 370px, (min-width: 40rem) 46vw, 92vw">
+              <img src="assets/img/aerea_7.jpg" width="1200" height="675" alt="Vista aérea do vale, com mata fechada de um lado e pasto do outro" loading="lazy" decoding="async">
+              </picture>
+            <span class="visualmente-oculto">Ampliar: Vista aérea do vale, com mata fechada de um lado e pasto do outro</span>
+          </button>
+          <figcaption><h3>A mata</h3></figcaption>
+        </figure>
         </div>
       </div>
     </section>
@@ -354,7 +403,8 @@
       <div class="envelope">
         <h3 class="bloco-titulo">Fotos do chalé</h3>
       </div>
-      <div class="tira">
+      <div class="tira" id="tira-chale" data-rolagem tabindex="0" role="region"
+        aria-label="Fotos do chalé — use as setas do teclado ou arraste">
         <button type="button" class="foto" data-lightbox data-full="assets/img/chale/chale_frente-1600.webp" data-legenda="Fachada do chalé de madeira com escada de pedra e varanda">
             <picture>
               <source type="image/webp" srcset="assets/img/chale/chale_frente-480.webp 480w" sizes="(min-width: 40rem) 22rem, 70vw">
@@ -453,6 +503,18 @@
               </picture>
             <span class="visualmente-oculto">Ampliar: Vista da lagoa e do pasto a partir do chalé</span>
           </button>
+      </div>
+      <div class="envelope">
+        <div class="controles">
+          <button class="controle" type="button" data-rolar="tira-chale" data-direcao="-1">
+            <span class="visualmente-oculto">Ver fotos do chalé anteriores</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg>
+          </button>
+          <button class="controle" type="button" data-rolar="tira-chale" data-direcao="1">
+            <span class="visualmente-oculto">Ver mais fotos do chalé</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5 7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
     </section>
 
@@ -563,12 +625,12 @@
               </picture>
             <span class="visualmente-oculto">Ampliar: Casa centenária vista da lateral, com o muro de pedra</span>
           </button>
-          <button type="button" class="foto" data-lightbox data-full="assets/img/chale/vista-lagoa.jpg" data-legenda="Reflexo das árvores na lagoa no fim da tarde">
+          <button type="button" class="foto" data-lightbox data-full="assets/img/casa_centenaria_aerea_2-1600.webp" data-legenda="A casa centenária vista de cima, com o gramado e a mata em volta">
             <picture>
-              <source type="image/webp" srcset="assets/img/chale/vista-lagoa-480.webp 480w, assets/img/chale/vista-lagoa-960.webp 960w" sizes="(min-width: 46rem) 25vw, 46vw">
-              <img src="assets/img/chale/vista-lagoa.jpg" width="1200" height="1603" alt="Reflexo das árvores na lagoa no fim da tarde" loading="lazy" decoding="async">
+              <source type="image/webp" srcset="assets/img/casa_centenaria_aerea_2-480.webp 480w, assets/img/casa_centenaria_aerea_2-960.webp 960w, assets/img/casa_centenaria_aerea_2-1600.webp 1600w" sizes="(min-width: 46rem) 25vw, 46vw">
+              <img src="assets/img/casa_centenaria_aerea_2.jpg" width="1200" height="675" alt="A casa centenária vista de cima, com o gramado e a mata em volta" loading="lazy" decoding="async">
               </picture>
-            <span class="visualmente-oculto">Ampliar: Reflexo das árvores na lagoa no fim da tarde</span>
+            <span class="visualmente-oculto">Ampliar: A casa centenária vista de cima, com o gramado e a mata em volta</span>
           </button>
           <button type="button" class="foto" data-lightbox data-full="assets/img/aerea_2-1600.webp" data-legenda="Vista aérea do sítio com a mata fechada em volta">
             <picture>
@@ -600,7 +662,8 @@
         </dl>
       </div>
 
-      <div class="depoimentos" data-carrossel tabindex="0" role="region" aria-label="Depoimentos de hóspedes">
+      <div class="depoimentos" id="tira-depoimentos" data-rolagem tabindex="0" role="region"
+        aria-label="Depoimentos de hóspedes — use as setas do teclado ou arraste">
         <figure class="depoimento">
               <blockquote>“Definitivamente, uma das minhas melhores experiências no Airbnb. O chalé é super bem distribuído, tudo super confortável e a vizinhança é perfeita pra quem curte natureza, silêncio e calmaria.”</blockquote>
               <figcaption><strong>Janaina</strong>março de 2022 · Airbnb</figcaption>
@@ -653,12 +716,12 @@
 
       <div class="envelope">
         <div class="controles">
-          <button class="controle" type="button" data-carrossel-anterior>
-            <span class="visualmente-oculto">Depoimentos anteriores</span>
+          <button class="controle" type="button" data-rolar="tira-depoimentos" data-direcao="-1">
+            <span class="visualmente-oculto">Ver depoimentos anteriores</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg>
           </button>
-          <button class="controle" type="button" data-carrossel-proximo>
-            <span class="visualmente-oculto">Próximos depoimentos</span>
+          <button class="controle" type="button" data-rolar="tira-depoimentos" data-direcao="1">
+            <span class="visualmente-oculto">Ver mais depoimentos</span>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 5 7 7-7 7"/></svg>
           </button>
           <a class="botao botao--contorno" href="https://www.airbnb.com.br/rooms/50617195" target="_blank" rel="noopener">Ler todas no Airbnb</a>
@@ -737,12 +800,21 @@
     </div>
   </footer>
 
+  <!-- No celular o botão de reservar do cabeçalho não caberia; esta barra
+       aparece depois que o hero sai da tela, para que o caminho da reserva
+       nunca fique a mais de um toque. -->
+  <div class="barra-acao" data-barra-acao>
+    <a class="botao botao--principal" href="https://www.airbnb.com.br/rooms/50617195" target="_blank" rel="noopener">Reservar</a>
+    <a class="botao botao--contorno" href="https://wa.me/554799886297" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+
   <dialog class="lightbox" data-lightbox-dialog aria-label="Foto ampliada">
     <div class="lightbox__palco">
       <div class="lightbox__quadro">
         <img data-lightbox-img src="" alt="">
       </div>
       <div class="lightbox__rodape">
+        <p class="lightbox__legenda" data-lightbox-legenda></p>
         <button class="lightbox__btn" type="button" data-lightbox-anterior>
           <span class="visualmente-oculto">Foto anterior</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg>

@@ -31,7 +31,27 @@
     };
 
     gatilho.addEventListener('click', () => {
-      abrirMenu(gatilho.getAttribute('aria-expanded') !== 'true');
+      const abrir = gatilho.getAttribute('aria-expanded') !== 'true';
+      abrirMenu(abrir);
+      if (abrir) $('a', menu)?.focus();
+    });
+
+    // Enquanto o menu cobre a tela, Tab circula entre o gatilho e os itens
+    // dele: sem isto o foco continuaria andando pela página por baixo.
+    const foco = () => [gatilho, ...$$('a', menu)].filter((el) => el.offsetParent);
+    addEventListener('keydown', (evento) => {
+      if (evento.key !== 'Tab' || gatilho.getAttribute('aria-expanded') !== 'true') return;
+      const lista = foco();
+      if (lista.length < 2) return;
+      const primeiro = lista[0];
+      const ultimo = lista[lista.length - 1];
+      if (evento.shiftKey && document.activeElement === primeiro) {
+        evento.preventDefault();
+        ultimo.focus();
+      } else if (!evento.shiftKey && document.activeElement === ultimo) {
+        evento.preventDefault();
+        primeiro.focus();
+      }
     });
 
     menu.addEventListener('click', (evento) => {
@@ -83,6 +103,7 @@
   if (dialogo && typeof dialogo.showModal === 'function') {
     const imagem = $('[data-lightbox-img]', dialogo);
     const contagem = $('[data-lightbox-contagem]', dialogo);
+    const legenda = $('[data-lightbox-legenda]', dialogo);
     let grupo = [];
     let indice = 0;
     let origem = null;
@@ -97,6 +118,7 @@
       const botao = grupo[indice];
       imagem.src = botao.dataset.full;
       imagem.alt = botao.dataset.legenda || '';
+      legenda.textContent = botao.dataset.legenda || '';
       contagem.textContent = `${indice + 1} / ${grupo.length}`;
       precarregar(indice + 1);
       precarregar(indice - 1 + grupo.length);
@@ -126,6 +148,19 @@
       if (!evento.target.closest('img, button')) dialogo.close();
     });
 
+    // No celular, arrastar para o lado troca de foto — é o gesto que se
+    // espera de uma galeria, e as setas ficam pequenas para o dedo.
+    let toque = null;
+    dialogo.addEventListener('touchstart', (evento) => {
+      toque = evento.touches.length === 1 ? evento.touches[0].clientX : null;
+    }, { passive: true });
+    dialogo.addEventListener('touchend', (evento) => {
+      if (toque === null) return;
+      const arrasto = evento.changedTouches[0].clientX - toque;
+      toque = null;
+      if (Math.abs(arrasto) > 45) mostrar(indice + (arrasto < 0 ? 1 : -1));
+    });
+
     // Devolve o foco para a miniatura de onde a foto foi aberta.
     dialogo.addEventListener('close', () => {
       imagem.removeAttribute('src');
@@ -133,20 +168,41 @@
     });
   }
 
-  /* --- Carrossel de depoimentos ----------------------------------------- */
+  /* --- Tiras horizontais ------------------------------------------------- */
 
-  const carrossel = $('[data-carrossel]');
-  if (carrossel) {
+  const botoesRolagem = $$('[data-rolar]');
+
+  for (const faixa of $$('[data-rolagem]')) {
+    const botoes = botoesRolagem.filter((b) => b.dataset.rolar === faixa.id);
+    if (!botoes.length) continue;
+
     const passo = () => {
-      const cartao = carrossel.firstElementChild;
-      if (!cartao) return carrossel.clientWidth;
-      const espaco = parseFloat(getComputedStyle(carrossel).columnGap) || 16;
-      return cartao.getBoundingClientRect().width + espaco;
+      const item = faixa.firstElementChild;
+      if (!item) return faixa.clientWidth;
+      const espaco = parseFloat(getComputedStyle(faixa).columnGap) || 16;
+      return item.getBoundingClientRect().width + espaco;
     };
-    const rolar = (direcao) => carrossel.scrollBy({ left: passo() * direcao, behavior: 'smooth' });
 
-    $('[data-carrossel-proximo]')?.addEventListener('click', () => rolar(1));
-    $('[data-carrossel-anterior]')?.addEventListener('click', () => rolar(-1));
+    // Desabilita a seta que não tem mais para onde ir, em vez de deixar um
+    // botão que parece funcionar e não faz nada.
+    const marcar = () => {
+      const fim = faixa.scrollWidth - faixa.clientWidth - 2;
+      for (const botao of botoes) {
+        botao.disabled = Number(botao.dataset.direcao) < 0
+          ? faixa.scrollLeft <= 2
+          : faixa.scrollLeft >= fim;
+      }
+    };
+
+    for (const botao of botoes) {
+      botao.addEventListener('click', () => {
+        faixa.scrollBy({ left: passo() * Number(botao.dataset.direcao), behavior: 'smooth' });
+      });
+    }
+
+    faixa.addEventListener('scroll', marcar, { passive: true });
+    addEventListener('resize', marcar);
+    marcar();
   }
 
   /* --- Entrada suave das figuras ---------------------------------------- */
@@ -177,6 +233,16 @@
 
       pendentes.forEach((el) => observador.observe(el));
     }
+  }
+
+  /* --- Barra de ação no celular ----------------------------------------- */
+
+  const barra = $('[data-barra-acao]');
+  const hero = $('#inicio');
+  if (barra && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([entrada]) => {
+      barra.classList.toggle('is-visivel', !entrada.isIntersecting);
+    }).observe(hero);
   }
 
   /* --- Ano no rodapé ---------------------------------------------------- */
